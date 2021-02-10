@@ -22,7 +22,7 @@ class HelpAboutController: UIViewController {
         headerImageView.layer.masksToBounds = false
         headerImageView.layer.cornerRadius = 30
         headerImageView.clipsToBounds = true
-   
+        
     }
     
     @IBAction func headerNavBar(_ sender: Any) {
@@ -46,7 +46,7 @@ class HelpAboutController: UIViewController {
             helpTextArea.text = ""
         }else if(headerNavBarSegementController.selectedSegmentIndex == 4)
         {
-            headerImageView.image = UIImage(named: "SpeedHome")
+            headerImageView.image = UIImage(named: "WeightHome")
             helpTextArea.text = ""
         }
     }

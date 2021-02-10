@@ -21,28 +21,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="WeightHome"/>
                                 <connections>
-                                    <action selector="btnWeigth:" destination="uX1-cL-UL9" eventType="touchUpInside" id="3Fl-oJ-Pr2"/>
+                                    <action selector="btnWeight:" destination="uX1-cL-UL9" eventType="touchUpInside" id="amQ-qe-V1b"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-B4-yjk">
                                 <rect key="frame" x="20" y="403" width="177" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="TemperatureHome"/>
+                                <connections>
+                                    <action selector="btnTemperature:" destination="uX1-cL-UL9" eventType="touchUpInside" id="TRg-MH-zDU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMS-4k-tsf">
                                 <rect key="frame" x="20" y="602" width="177" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="SpeedHome"/>
+                                <connections>
+                                    <action selector="btnSpeed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="9nh-vm-CNC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2g-Sc-8Od">
                                 <rect key="frame" x="217" y="403" width="177" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="VolumeHome"/>
+                                <connections>
+                                    <action selector="btnVolume:" destination="uX1-cL-UL9" eventType="touchUpInside" id="Ftl-lk-tOh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icn-Od-WjU">
                                 <rect key="frame" x="217" y="208" width="177" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="LengthHome"/>
+                                <connections>
+                                    <action selector="btnLength:" destination="uX1-cL-UL9" eventType="touchUpInside" id="Aa6-66-HyB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utility Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-3E-xL0">
                                 <rect key="frame" x="20" y="115" width="365" height="43"/>
@@ -416,11 +428,11 @@
             </objects>
             <point key="canvasLocation" x="-39" y="-2854"/>
         </scene>
-        <!--Help-->
+        <!--Help-About-->
         <scene sceneID="X3s-NL-m2b">
             <objects>
                 <navigationController id="W1D-Vi-tZq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Help" image="Help" id="fK2-wy-JVF"/>
+                    <tabBarItem key="tabBarItem" title="Help-About" image="Help" id="fK2-wy-JVF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fxq-h2-fa5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -433,7 +445,7 @@
             </objects>
             <point key="canvasLocation" x="1367" y="-3368"/>
         </scene>
-        <!--Help-->
+        <!--Help-About-->
         <scene sceneID="bDO-Fa-QYT">
             <objects>
                 <viewController id="DeM-lc-Pnn" customClass="HelpAboutController" customModule="Utility_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -474,7 +486,7 @@
                         <viewLayoutGuide key="safeArea" id="A0O-hX-myG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Help" id="Sum-2C-l9B"/>
+                    <navigationItem key="navigationItem" title="Help-About" id="Sum-2C-l9B"/>
                     <connections>
                         <outlet property="headerImageView" destination="n9i-q8-spD" id="HQN-Ug-y39"/>
                         <outlet property="headerNavBarSegementController" destination="GcJ-Vy-k7W" id="9mn-vg-tf5"/>
