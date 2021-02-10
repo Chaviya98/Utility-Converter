@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q6O-Pb-uVE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DeM-lc-Pnn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,21 +8,63 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="zUQ-b4-kMK">
             <objects>
-                <viewController id="uX1-cL-UL9" sceneMemberID="viewController">
+                <viewController id="uX1-cL-UL9" customClass="ViewController" customModule="Utility_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2jt-vN-UAG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPJ-S6-KnH">
+                                <rect key="frame" x="20" y="208" width="177" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="SpeedHome"/>
+                                <connections>
+                                    <action selector="btnLength:" destination="uX1-cL-UL9" eventType="touchUpInside" id="wFA-PN-Bj6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-B4-yjk">
+                                <rect key="frame" x="20" y="403" width="177" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="TemperatureHome"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMS-4k-tsf">
+                                <rect key="frame" x="20" y="602" width="177" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="LengthHome"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2g-Sc-8Od">
+                                <rect key="frame" x="217" y="403" width="177" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="VolumeHome"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icn-Od-WjU">
+                                <rect key="frame" x="217" y="208" width="177" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="LengthHome"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utility Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-3E-xL0">
+                                <rect key="frame" x="20" y="137" width="365" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb4-t6-vtL">
+                                <rect key="frame" x="217" y="602" width="177" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Setting"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9GO-tx-o98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VmS-u9-blT"/>
+                    <navigationItem key="navigationItem" title="Home" id="VmS-u9-blT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyh-Z7-Ki8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2160" y="-318"/>
+            <point key="canvasLocation" x="-2160.8695652173915" y="-318.08035714285711"/>
         </scene>
         <!--Home-->
         <scene sceneID="ekQ-GB-GTN">
@@ -78,7 +120,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSy-EH-Hkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="1151"/>
+            <point key="canvasLocation" x="1367" y="1149"/>
         </scene>
         <!--Volume-->
         <scene sceneID="dpX-nU-XAb">
@@ -136,6 +178,7 @@
             <objects>
                 <navigationController id="Hdn-FG-leW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Weight" image="Weight" id="qf4-xb-9AF"/>
+                    <navigationItem key="navigationItem" id="2qM-xZ-OOf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mly-IF-fVh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -356,13 +399,91 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speed" id="0xM-4f-lNh">
-                        <barButtonItem key="leftBarButtonItem" title="History" image="History" id="PGw-jl-l5W"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="PGw-jl-l5W"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ySB-9d-HZU"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXo-S8-I3u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2385.507246376812" y="-1787.2767857142856"/>
+        </scene>
+        <!--Help About Controller-->
+        <scene sceneID="bDO-Fa-QYT">
+            <objects>
+                <viewController id="DeM-lc-Pnn" customClass="HelpAboutController" customModule="Utility_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LyT-Xo-sJD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIe-mE-nxc">
+                                <rect key="frame" x="0.0" y="35" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Help-About" leftItemsSupplementBackButton="YES" id="qMn-49-DAr">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="4ds-nt-piU"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SpeedHome" translatesAutoresizingMaskIntoConstraints="NO" id="n9i-q8-spD">
+                                <rect key="frame" x="87" y="197" width="240" height="240"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kQL-L7-U1M">
+                                <rect key="frame" x="30" y="483" width="354" height="317"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="317" id="lUL-q0-uzo"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GcJ-Vy-k7W">
+                                <rect key="frame" x="20" y="109" width="374" height="32"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <segments>
+                                    <segment title="" image="Speed"/>
+                                    <segment title="" image="Length"/>
+                                    <segment title="" image="Temperature"/>
+                                    <segment title="" image="Volume"/>
+                                    <segment title="" image="Weight"/>
+                                </segments>
+                                <connections>
+                                    <action selector="NavBarHeader:" destination="jfn-8k-r7z" eventType="valueChanged" id="3Vn-Pb-0bh"/>
+                                    <action selector="headerNavBar:" destination="DeM-lc-Pnn" eventType="valueChanged" id="rhh-5P-hPZ"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A0O-hX-myG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GIe-mE-nxc" firstAttribute="leading" secondItem="A0O-hX-myG" secondAttribute="leading" id="63j-bU-v7N"/>
+                            <constraint firstItem="kQL-L7-U1M" firstAttribute="leading" secondItem="A0O-hX-myG" secondAttribute="leading" constant="30" id="6yH-ND-25v"/>
+                            <constraint firstItem="kQL-L7-U1M" firstAttribute="centerX" secondItem="n9i-q8-spD" secondAttribute="centerX" id="Gdn-7f-8fu"/>
+                            <constraint firstItem="GcJ-Vy-k7W" firstAttribute="top" secondItem="GIe-mE-nxc" secondAttribute="bottom" constant="30" id="Hsw-6x-lGI"/>
+                            <constraint firstItem="kQL-L7-U1M" firstAttribute="top" secondItem="n9i-q8-spD" secondAttribute="bottom" constant="46" id="Nj2-qJ-H6G"/>
+                            <constraint firstItem="GIe-mE-nxc" firstAttribute="top" secondItem="LyT-Xo-sJD" secondAttribute="topMargin" constant="-9" id="Ogb-8b-w3l"/>
+                            <constraint firstItem="GIe-mE-nxc" firstAttribute="centerX" secondItem="n9i-q8-spD" secondAttribute="centerX" id="VSl-EM-fhh"/>
+                            <constraint firstItem="GcJ-Vy-k7W" firstAttribute="leading" secondItem="A0O-hX-myG" secondAttribute="leading" constant="20" id="cFP-jD-h3Z"/>
+                            <constraint firstItem="n9i-q8-spD" firstAttribute="leading" secondItem="A0O-hX-myG" secondAttribute="leading" constant="87" id="dxg-jc-1LV"/>
+                            <constraint firstItem="n9i-q8-spD" firstAttribute="centerX" secondItem="A0O-hX-myG" secondAttribute="centerX" id="jQC-cS-8qN"/>
+                            <constraint firstItem="A0O-hX-myG" firstAttribute="trailing" secondItem="GcJ-Vy-k7W" secondAttribute="trailing" constant="20" id="me2-mK-K70"/>
+                            <constraint firstItem="kQL-L7-U1M" firstAttribute="centerX" secondItem="n9i-q8-spD" secondAttribute="centerX" id="one-mk-yMG"/>
+                            <constraint firstItem="n9i-q8-spD" firstAttribute="top" secondItem="GcJ-Vy-k7W" secondAttribute="bottom" constant="57" id="tSl-hM-c1v"/>
+                            <constraint firstItem="A0O-hX-myG" firstAttribute="trailing" secondItem="kQL-L7-U1M" secondAttribute="trailing" constant="30" id="xvz-Uk-dzh"/>
+                            <constraint firstItem="A0O-hX-myG" firstAttribute="bottom" secondItem="kQL-L7-U1M" secondAttribute="bottom" constant="62" id="yqH-SM-A3e"/>
+                            <constraint firstItem="GcJ-Vy-k7W" firstAttribute="centerX" secondItem="A0O-hX-myG" secondAttribute="centerX" id="z4H-E9-Oo1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerImageView" destination="n9i-q8-spD" id="HQN-Ug-y39"/>
+                        <outlet property="headerNavBarSegementController" destination="GcJ-Vy-k7W" id="9mn-vg-tf5"/>
+                        <outlet property="helpTextArea" destination="kQL-L7-U1M" id="HIj-ii-bGW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOY-X8-x6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jfn-8k-r7z" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3747.826086956522" y="-2615.625"/>
         </scene>
         <!--Length-->
         <scene sceneID="V8L-rL-Kjc">
@@ -597,7 +718,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Length" id="h9z-rC-med">
-                        <barButtonItem key="leftBarButtonItem" title="History" image="History" id="EQc-8P-6di"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="EQc-8P-6di"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="yLg-sv-dxj"/>
                     </navigationItem>
                 </viewController>
@@ -736,7 +857,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Temperature" id="Rwz-7t-Xrs">
-                        <barButtonItem key="leftBarButtonItem" title="History" image="History" id="3eo-2C-xCq"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="3eo-2C-xCq"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="wc8-4c-jIw"/>
                     </navigationItem>
                 </viewController>
@@ -928,7 +1049,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Volume" id="Zq0-Vg-SXQ">
-                        <barButtonItem key="leftBarButtonItem" title="History" image="History" id="We5-33-bnm"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="We5-33-bnm"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ljh-fZ-YgX"/>
                     </navigationItem>
                 </viewController>
@@ -1091,25 +1212,35 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speed" id="y4y-WH-oNb">
-                        <barButtonItem key="leftBarButtonItem" title="History" image="History" id="F7J-M6-mUu"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="F7J-M6-mUu"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="2wh-eB-ZbS"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAo-ZY-9Mw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2385.507246376812" y="1149.1071428571429"/>
+            <point key="canvasLocation" x="2386" y="1148"/>
         </scene>
     </scenes>
     <resources>
-        <image name="History" width="24" height="24"/>
         <image name="Length" width="24" height="24"/>
+        <image name="LengthHome" width="1024" height="1024"/>
+        <image name="Setting" width="1024" height="1024"/>
         <image name="Speed" width="24" height="24"/>
+        <image name="SpeedHome" width="1024" height="1024"/>
         <image name="Temperature" width="24" height="24"/>
+        <image name="TemperatureHome" width="1024" height="1024"/>
         <image name="Volume" width="24" height="24"/>
+        <image name="VolumeHome" width="1024" height="1024"/>
         <image name="Weight" width="24" height="24"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
