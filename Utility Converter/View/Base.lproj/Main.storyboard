@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="WeightHome"/>
                                 <connections>
-                                    <action selector="btnWeight:" destination="uX1-cL-UL9" eventType="touchUpInside" id="amQ-qe-V1b"/>
+                                    <action selector="btnWeightPressed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="amQ-qe-V1b"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9K-B4-yjk">
@@ -29,7 +29,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="TemperatureHome"/>
                                 <connections>
-                                    <action selector="btnTemperature:" destination="uX1-cL-UL9" eventType="touchUpInside" id="TRg-MH-zDU"/>
+                                    <action selector="btnTemperaturePressed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="TRg-MH-zDU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMS-4k-tsf">
@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="SpeedHome"/>
                                 <connections>
-                                    <action selector="btnSpeed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="9nh-vm-CNC"/>
+                                    <action selector="btnSpeedPressed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="9nh-vm-CNC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2g-Sc-8Od">
@@ -45,7 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="VolumeHome"/>
                                 <connections>
-                                    <action selector="btnVolume:" destination="uX1-cL-UL9" eventType="touchUpInside" id="Ftl-lk-tOh"/>
+                                    <action selector="btnVolumePressed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="Ftl-lk-tOh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icn-Od-WjU">
@@ -53,7 +53,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="LengthHome"/>
                                 <connections>
-                                    <action selector="btnLength:" destination="uX1-cL-UL9" eventType="touchUpInside" id="Aa6-66-HyB"/>
+                                    <action selector="btnLengthPressed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="Aa6-66-HyB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utility Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-3E-xL0">
@@ -68,7 +68,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="SettingHome"/>
                                 <connections>
-                                    <action selector="btnSetting:" destination="uX1-cL-UL9" eventType="touchUpInside" id="oOo-6g-D13"/>
+                                    <action selector="btnSettingPressed:" destination="uX1-cL-UL9" eventType="touchUpInside" id="oOo-6g-D13"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,6 +77,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="VmS-u9-blT"/>
                     <connections>
+                        <outlet property="btnLength" destination="Icn-Od-WjU" id="c9B-hz-W9h"/>
+                        <outlet property="btnSetting" destination="Tb4-t6-vtL" id="Qb6-BJ-YHn"/>
+                        <outlet property="btnSpeed" destination="oMS-4k-tsf" id="Duk-lq-Dqe"/>
+                        <outlet property="btnTemperature" destination="l9K-B4-yjk" id="fgT-Hl-hEh"/>
+                        <outlet property="btnVolume" destination="R2g-Sc-8Od" id="iof-iM-OYf"/>
+                        <outlet property="btnWeight" destination="mPJ-S6-KnH" id="7JW-qE-A1a"/>
                         <segue destination="Q6O-Pb-uVE" kind="show" identifier="tabBarPrimary" id="oha-Iw-vTr"/>
                         <segue destination="PAe-TT-MOU" kind="show" identifier="tabBarSecondary" id="G1N-Tw-wie"/>
                     </connections>

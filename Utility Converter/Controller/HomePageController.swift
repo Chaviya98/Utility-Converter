@@ -13,10 +13,44 @@ class HomeController: UIViewController {
     // Create a value for chosed view
     private var nextViewIndexNumber = Int()
     
+    @IBOutlet weak var btnWeight: UIButton!
+    @IBOutlet weak var btnLength: UIButton!
+    @IBOutlet weak var btnTemperature: UIButton!
+    @IBOutlet weak var btnVolume: UIButton!
+    @IBOutlet weak var btnSpeed: UIButton!
+    @IBOutlet weak var btnSetting: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        
     }
     
+    private func setupUI(){
+        btnWeight.layer.masksToBounds = false
+        btnWeight.layer.cornerRadius = 30
+        btnWeight.clipsToBounds = true
+        
+        btnLength.layer.masksToBounds = false
+        btnLength.layer.cornerRadius = 30
+        btnLength.clipsToBounds = true
+        
+        btnTemperature.layer.masksToBounds = false
+        btnTemperature.layer.cornerRadius = 30
+        btnTemperature.clipsToBounds = true
+        
+        btnVolume.layer.masksToBounds = false
+        btnVolume.layer.cornerRadius = 30
+        btnVolume.clipsToBounds = true
+        
+        btnSpeed.layer.masksToBounds = false
+        btnSpeed.layer.cornerRadius = 30
+        btnSpeed.clipsToBounds = true
+        
+        btnSetting.layer.masksToBounds = false
+        btnSetting.layer.cornerRadius = 30
+        btnSetting.clipsToBounds = true
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tabBarPrimary" {
@@ -61,32 +95,32 @@ class HomeController: UIViewController {
         }
     }
     
-    @IBAction func btnWeight(_ sender: UIButton) {
+    @IBAction func btnWeightPressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 0
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnLength(_ sender: UIButton) {
+    @IBAction func btnLengthPressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 1
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnTemperature(_ sender: UIButton) {
+    @IBAction func btnTemperaturePressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 2
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnVolume(_ sender: UIButton) {
+    @IBAction func btnVolumePressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 3
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnSpeed(_ sender: UIButton) {
+    @IBAction func btnSpeedPressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 4
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnSetting(_ sender: UIButton) {
+    @IBAction func btnSettingPressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 0
         self.performSegue(withIdentifier: "tabBarSecondary", sender: self)
     }
