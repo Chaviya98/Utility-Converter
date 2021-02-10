@@ -101,12 +101,11 @@
 		4E731F5725D3B6AC00A73E77 /* Utility Converter */ = {
 			isa = PBXGroup;
 			children = (
+				4E731F8E25D3C8A700A73E77 /* View */,
 				4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */,
 				4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */,
 				4E731F5C25D3B6AC00A73E77 /* ViewController.swift */,
-				4E731F5E25D3B6AC00A73E77 /* Main.storyboard */,
 				4E731F6425D3B6B000A73E77 /* Assets.xcassets */,
-				4E731F6625D3B6B000A73E77 /* LaunchScreen.storyboard */,
 				4E731F6925D3B6B000A73E77 /* Info.plist */,
 				4E731F6125D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld */,
 			);
@@ -129,6 +128,15 @@
 				4E731F7F25D3B6B100A73E77 /* Info.plist */,
 			);
 			path = "Utility ConverterUITests";
+			sourceTree = "<group>";
+		};
+		4E731F8E25D3C8A700A73E77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E731F5E25D3B6AC00A73E77 /* Main.storyboard */,
+				4E731F6625D3B6B000A73E77 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
