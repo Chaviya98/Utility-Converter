@@ -17,6 +17,7 @@
 		4E731F7325D3B6B100A73E77 /* Utility_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F7225D3B6B100A73E77 /* Utility_ConverterTests.swift */; };
 		4E731F7E25D3B6B100A73E77 /* Utility_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F7D25D3B6B100A73E77 /* Utility_ConverterUITests.swift */; };
 		4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F9A25D3DFFB00A73E77 /* HelpAboutController.swift */; };
+		4E731FB325D3FB7000A73E77 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731FB225D3FB7000A73E77 /* HomePageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4E731F7D25D3B6B100A73E77 /* Utility_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility_ConverterUITests.swift; sourceTree = "<group>"; };
 		4E731F7F25D3B6B100A73E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E731F9A25D3DFFB00A73E77 /* HelpAboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAboutController.swift; sourceTree = "<group>"; };
+		4E731FB225D3FB7000A73E77 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				4E731F9A25D3DFFB00A73E77 /* HelpAboutController.swift */,
+				4E731FB225D3FB7000A73E77 /* HomePageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */,
 				4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */,
 				4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */,
+				4E731FB325D3FB7000A73E77 /* HomePageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
