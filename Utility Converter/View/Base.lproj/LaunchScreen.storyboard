@@ -17,20 +17,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ckv-F0-aIv">
-                                <rect key="frame" x="60" y="281" width="295" height="335"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="295" id="k3l-2z-9Vh"/>
-                                    <constraint firstAttribute="height" constant="335" id="wRZ-um-Dab"/>
-                                </constraints>
+                                <rect key="frame" x="60" y="226" width="294" height="335"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Utility Converter" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jRg-PY-I8E">
+                                <rect key="frame" x="20" y="559" width="374" height="56"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ckv-F0-aIv" secondAttribute="bottom" constant="246" id="Gre-Rn-yjM"/>
-                            <constraint firstItem="Ckv-F0-aIv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="SQj-oc-7fe"/>
-                            <constraint firstItem="Ckv-F0-aIv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="237" id="lyL-AC-vQg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ckv-F0-aIv" secondAttribute="trailing" constant="59" id="w1T-CC-bA3"/>
+                            <constraint firstItem="Ckv-F0-aIv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="0Ww-rS-SPD"/>
+                            <constraint firstItem="jRg-PY-I8E" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="515" id="2To-J0-iDN"/>
+                            <constraint firstItem="jRg-PY-I8E" firstAttribute="centerX" secondItem="Ckv-F0-aIv" secondAttribute="centerX" id="5Ep-29-CJ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jRg-PY-I8E" secondAttribute="trailing" constant="20" id="QjY-IX-40R"/>
+                            <constraint firstItem="Ckv-F0-aIv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="182" id="ZJk-lG-oUB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ckv-F0-aIv" secondAttribute="trailing" constant="60" id="ge7-Pa-Nej"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jRg-PY-I8E" secondAttribute="bottom" constant="247" id="j59-Lm-lPx"/>
+                            <constraint firstItem="jRg-PY-I8E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kXD-uH-XIy"/>
+                            <constraint firstItem="Ckv-F0-aIv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xff-Bj-wlb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ckv-F0-aIv" secondAttribute="bottom" constant="301" id="yfN-0R-Hfh"/>
                         </constraints>
                     </view>
                 </viewController>
