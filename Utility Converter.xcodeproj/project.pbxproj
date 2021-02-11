@@ -19,6 +19,8 @@
 		4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F9A25D3DFFB00A73E77 /* HelpAboutController.swift */; };
 		4E731FB325D3FB7000A73E77 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731FB225D3FB7000A73E77 /* HomePageController.swift */; };
 		4E731FBC25D422C300A73E77 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E731FBB25D422C300A73E77 /* CustomKeyboard.xib */; };
+		4E731FC425D4355700A73E77 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731FC325D4355700A73E77 /* TemperatureViewController.swift */; };
+		4E731FC925D436FF00A73E77 /* DataManagementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731FC825D436FF00A73E77 /* DataManagementStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		4E731F9A25D3DFFB00A73E77 /* HelpAboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAboutController.swift; sourceTree = "<group>"; };
 		4E731FB225D3FB7000A73E77 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		4E731FBB25D422C300A73E77 /* CustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomKeyboard.xib; sourceTree = "<group>"; };
+		4E731FC325D4355700A73E77 /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		4E731FC825D436FF00A73E77 /* DataManagementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 			children = (
 				4E731F9A25D3DFFB00A73E77 /* HelpAboutController.swift */,
 				4E731FB225D3FB7000A73E77 /* HomePageController.swift */,
+				4E731FC325D4355700A73E77 /* TemperatureViewController.swift */,
+				4E731FC825D436FF00A73E77 /* DataManagementStore.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,11 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E731FC925D436FF00A73E77 /* DataManagementStore.swift in Sources */,
 				4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */,
 				4E731F6325D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld in Sources */,
 				4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */,
 				4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */,
 				4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */,
+				4E731FC425D4355700A73E77 /* TemperatureViewController.swift in Sources */,
 				4E731FB325D3FB7000A73E77 /* HomePageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

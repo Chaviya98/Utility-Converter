@@ -96,27 +96,27 @@ class HomeController: UIViewController {
     }
     
     @IBAction func btnWeightPressed(_ sender: UIButton) {
-        self.nextViewIndexNumber = 0
-        self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
-    }
-    
-    @IBAction func btnLengthPressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 1
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnTemperaturePressed(_ sender: UIButton) {
+    @IBAction func btnLengthPressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 2
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnVolumePressed(_ sender: UIButton) {
+    @IBAction func btnTemperaturePressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 3
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     
-    @IBAction func btnSpeedPressed(_ sender: UIButton) {
+    @IBAction func btnVolumePressed(_ sender: UIButton) {
         self.nextViewIndexNumber = 4
+        self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
+    }
+    
+    @IBAction func btnSpeedPressed(_ sender: UIButton) {
+        self.nextViewIndexNumber = 5
         self.performSegue(withIdentifier: "tabBarPrimary", sender: self)
     }
     

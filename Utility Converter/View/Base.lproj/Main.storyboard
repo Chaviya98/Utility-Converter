@@ -248,7 +248,7 @@
             </objects>
             <point key="canvasLocation" x="1367" y="-1787"/>
         </scene>
-        <!--Speed-->
+        <!--Weight-->
         <scene sceneID="lyx-WH-Ro7">
             <objects>
                 <viewController id="6nm-JQ-aB0" sceneMemberID="viewController">
@@ -455,7 +455,7 @@
                             <constraint firstItem="g3q-eg-xjj" firstAttribute="bottom" secondItem="oTG-hG-4gJ" secondAttribute="bottom" constant="289" id="v6Q-tu-fNo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Speed" id="0xM-4f-lNh">
+                    <navigationItem key="navigationItem" title="Weight" id="0xM-4f-lNh">
                         <barButtonItem key="leftBarButtonItem" title="History" id="PGw-jl-l5W"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ySB-9d-HZU"/>
                     </navigationItem>
@@ -508,22 +508,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="SpeedHome" translatesAutoresizingMaskIntoConstraints="NO" id="n9i-q8-spD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SpeedHome" translatesAutoresizingMaskIntoConstraints="NO" id="n9i-q8-spD">
                                 <rect key="frame" x="87" y="197" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kQL-L7-U1M">
-                                <rect key="frame" x="30" y="483" width="354" height="317"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GcJ-Vy-k7W">
+                            <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GcJ-Vy-k7W">
                                 <rect key="frame" x="20" y="109" width="374" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                 <segments>
                                     <segment title="" image="Speed"/>
@@ -537,21 +526,57 @@
                                     <action selector="headerNavBar:" destination="DeM-lc-Pnn" eventType="valueChanged" id="rhh-5P-hPZ"/>
                                 </connections>
                             </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Utility Converter App supports speed conventions such as metres/sec, km/hour, miles/hour, nautical miles/hour (knot)." textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3k1-wJ-reE">
+                                <rect key="frame" x="20" y="479" width="374" height="101"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="ntt-R2-rtV"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="You can save up to 5 conventions at a time and the history option will list only the last 5 conversions per category." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-ge-IVn">
+                                <rect key="frame" x="20" y="577" width="374" height="114"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="2QC-2a-GG4"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A0O-hX-myG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="A0O-hX-myG" firstAttribute="bottom" secondItem="ixw-ge-IVn" secondAttribute="bottom" constant="68" id="6Et-kq-620"/>
+                            <constraint firstItem="3k1-wJ-reE" firstAttribute="top" secondItem="n9i-q8-spD" secondAttribute="bottom" constant="42" id="ECf-uP-QwR"/>
+                            <constraint firstItem="3k1-wJ-reE" firstAttribute="leading" secondItem="GcJ-Vy-k7W" secondAttribute="leading" id="Exe-ir-qRb"/>
+                            <constraint firstItem="GcJ-Vy-k7W" firstAttribute="centerX" secondItem="A0O-hX-myG" secondAttribute="centerX" id="LgM-OO-2fK"/>
+                            <constraint firstItem="n9i-q8-spD" firstAttribute="centerX" secondItem="GcJ-Vy-k7W" secondAttribute="centerX" id="MzZ-cH-KMa"/>
+                            <constraint firstItem="3k1-wJ-reE" firstAttribute="trailing" secondItem="ixw-ge-IVn" secondAttribute="trailing" id="NjN-XU-Olh"/>
+                            <constraint firstItem="GcJ-Vy-k7W" firstAttribute="leading" secondItem="LyT-Xo-sJD" secondAttribute="leadingMargin" id="Noz-th-02r"/>
+                            <constraint firstItem="n9i-q8-spD" firstAttribute="top" secondItem="GcJ-Vy-k7W" secondAttribute="bottom" constant="57" id="OWM-SU-9AD"/>
+                            <constraint firstItem="3k1-wJ-reE" firstAttribute="leading" secondItem="ixw-ge-IVn" secondAttribute="leading" id="VnQ-tz-udv"/>
+                            <constraint firstItem="A0O-hX-myG" firstAttribute="bottom" secondItem="3k1-wJ-reE" secondAttribute="bottom" constant="179" id="bkg-8g-JYg"/>
+                            <constraint firstItem="3k1-wJ-reE" firstAttribute="trailing" secondItem="GcJ-Vy-k7W" secondAttribute="trailing" id="dfZ-5O-WtC"/>
+                            <constraint firstItem="GcJ-Vy-k7W" firstAttribute="top" secondItem="A0O-hX-myG" secondAttribute="top" constant="53" id="egi-xP-VKQ"/>
+                            <constraint firstItem="n9i-q8-spD" firstAttribute="leading" secondItem="A0O-hX-myG" secondAttribute="leading" constant="87" id="sA9-un-Exl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help-About" id="Sum-2C-l9B"/>
                     <connections>
                         <outlet property="headerImageView" destination="n9i-q8-spD" id="HQN-Ug-y39"/>
                         <outlet property="headerNavBarSegementController" destination="GcJ-Vy-k7W" id="9mn-vg-tf5"/>
-                        <outlet property="helpTextArea" destination="kQL-L7-U1M" id="HIj-ii-bGW"/>
+                        <outlet property="primaryTextArea" destination="3k1-wJ-reE" id="ngf-66-9Sx"/>
+                        <outlet property="secondaryTextArea" destination="ixw-ge-IVn" id="MmI-rE-wCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOY-X8-x6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jfn-8k-r7z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2386" y="-3368"/>
+            <point key="canvasLocation" x="2385.507246376812" y="-3368.3035714285711"/>
         </scene>
         <!--Setting-->
         <scene sceneID="RnZ-u7-tup">
