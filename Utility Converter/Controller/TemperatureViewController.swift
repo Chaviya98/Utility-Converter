@@ -59,24 +59,28 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
             switch TemperatureUnits(rawValue: sender.tag)! {
             
             case .farenheit:
-                temperature.celsius = (doubleTextFieldValue - farenheitValueForCelsius0) * 5/9
-                temperature.farenheit = doubleTextFieldValue
-                temperature.kelvin = (doubleTextFieldValue - farenheitValueForCelsius0) * 5/9 + defultKelvinValueForCelsius0
+                let farenheitUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.fahrenheit)
+                temperature.farenheit = farenheitUnitObj.value
+                temperature.celsius = farenheitUnitObj.converted(to: .celsius).value
+                temperature.kelvin = farenheitUnitObj.converted(to: .kelvin).value
                 
                 textFieldCelsius.text = "\(formatTextFieldValue(data: temperature.celsius))"
                 textFieldKelvin.text = "\(formatTextFieldValue(data: temperature.kelvin))"
             case .celsius:
-                temperature.celsius = doubleTextFieldValue
-                temperature.farenheit = (doubleTextFieldValue * 9/5 + farenheitValueForCelsius0)
-                temperature.kelvin = doubleTextFieldValue + defultKelvinValueForCelsius0
+                let celsiusUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.celsius)
+                temperature.celsius = celsiusUnitObj.value
+                temperature.farenheit = celsiusUnitObj.converted(to: .fahrenheit).value
+                temperature.kelvin = celsiusUnitObj.converted(to: .kelvin).value
                 
                 textFieldFahrenheit.text = "\(formatTextFieldValue(data: temperature.farenheit))"
                 textFieldKelvin.text = "\(formatTextFieldValue(data: temperature.kelvin))"
                 
             case .kelvin:
-                temperature.celsius = doubleTextFieldValue - defultKelvinValueForCelsius0
-                temperature.farenheit = (doubleTextFieldValue - defultKelvinValueForCelsius0) * 9/5 + farenheitValueForCelsius0
-                temperature.kelvin = doubleTextFieldValue
+                let kelvinUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.kelvin)
+                
+                temperature.kelvin = kelvinUnitObj.value
+                temperature.celsius = kelvinUnitObj.converted(to: .celsius).value
+                temperature.farenheit = kelvinUnitObj.converted(to: .fahrenheit).value
                 
                 textFieldCelsius.text = "\(formatTextFieldValue(data: temperature.celsius))"
                 textFieldFahrenheit.text = "\(formatTextFieldValue(data: temperature.farenheit))"
@@ -95,19 +99,15 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
-        let alertMessages : [String: String] = ["Succssfully Saved !":"",
-                                                "Save Failed !":"Please check the text fields and try again"]
-        
         var alert : UIAlertController?
         
         if(textFieldFahrenheit.text != "" && textFieldCelsius.text != "" && textFieldKelvin.text != ""){
             DataManagementStore.saveDataToStore(key: "temperature", value: creatingHistoryData())
-            alert = UIAlertController(title: Array(alertMessages)[0].key, message: Array(alertMessages)[0].value, preferredStyle: UIAlertController.Style.alert)
+            alert = UIAlertController(title: "Succssfully Saved !", message: nil, preferredStyle: UIAlertController.Style.alert)
             
         } else {
-            alert = UIAlertController(title: Array(alertMessages)[1].key, message: Array(alertMessages)[1].value, preferredStyle: UIAlertController.Style.alert)
+            alert = UIAlertController(title: "Save Failed !", message: "Please check the text fields and try again", preferredStyle: UIAlertController.Style.alert)
         }
-        
         
         alert!.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert!, animated: true, completion: nil)
@@ -117,14 +117,13 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
         
         let storage = DataManagementStore.getSavedDataFromStore(key: "temperature")
-        let alertMessages : [String: String] = ["No History !":"No saved history found. Plase click save to add calculations to history."]
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
             self.present(destination, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: Array(alertMessages)[0].key, message: Array(alertMessages)[0].value, preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "No History !", message: "No saved history found. Plase click save to add calculations to history.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
