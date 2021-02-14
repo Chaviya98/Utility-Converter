@@ -12,4 +12,11 @@
 "TemperatureHelpTextSectionA" =  "\u{2022} Utility Converter App supports temperature conventions such as Celsius, Fahrenheit, Kelvin.";
 "VolumeHelpTextSectionA" =  "\u{2022} Utility Converter App supports volume convention such as UK gallon, litre, UK pint, fluid ounce, millilitre.";
 "WeightHelpTextSectionA" =  "\u{2022} Utility Converter App supports weight conventions such as Kg, grams, ounces, pounds, stone-pounds.";
+"SuccssfullAlertMsgTitle" = "Succssfully Saved !";
+"SuccssfullAlertMsgDescription" = "";
+"FailAlertMsgTitle" = "Save Failed !";
+"FailAlertMsgDescription" = "Please check the text fields and try again";
+"NoHistoryAlertMsgTitle" = "No History !";
+"NoHistoryAlertMsgDescription" = "No saved history found. Plase click save to add calculations to history.";
+"AlertOkButtonTitle" = "OK";
 
