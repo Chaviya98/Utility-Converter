@@ -30,6 +30,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
         self.assignDelegates()
         resetTextFieldsToDefaultSate()
         disableDefaultKeyboard()
+        retrievingDataInAppOpen()
     }
     
     func assignDelegates() {
@@ -44,6 +45,11 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         customKeyboard.activeTextField = textField
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        savingDataInAppClose()
     }
     
     @IBAction func lengthViewTextFieldValueChanged(_ sender: UITextField) {
@@ -176,6 +182,78 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     }
     
     
+    @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
+        var alert : UIAlertController?
+        
+        if(validationCheckForValues()){
+            DataManagementStore.saveDataToStore(key: "length", value: creatingHistoryData())
+            alert = UIAlertController(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: nil, preferredStyle: UIAlertController.Style.alert)
+            
+        } else {
+            alert = UIAlertController(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message:NSLocalizedString("FailAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)
+        }
+        
+        alert!.addAction(UIAlertAction(title: NSLocalizedString("AlertOkButtonTitle", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert!, animated: true, completion: nil)
+    }
+    
+    @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
+        let storage = DataManagementStore.getSavedDataFromStore(key: "length")
+        if(storage.count > 0){
+            // laoding history page with related history data
+            let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
+            destination.storage = storage
+            self.present(destination, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("AlertOkButtonTitle", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // cheking whether all the fields are filled with data 
+    func validationCheckForValues() -> Bool {
+        if(textFieldCm.text != "" && textFieldMm.text != "" && textFieldMile.text != "" && textFieldKm.text != "" && textFieldMetre.text != "" && textFieldYard.text != "" && textFieldInch.text != "" ){
+            return true
+        } else{
+            return false
+        }
+    }
+    // creating histroy data
+    func creatingHistoryData() -> String{
+        return "Centimeters --> \(length.cm)\n" +
+            "Millimeters --> \(length.mm)\n" +
+            "Miles --> \(length.mile)\n" +
+            "Kilometers --> \(length.km)\n" +
+            "Meters --> \(length.metre)\n" +
+            "Yards --> \(length.yard)\n" +
+            "Inches --> \(length.inch)"
+    }
+    
+    // saving available data in the text fields when app closing
+    func savingDataInAppClose(){
+        let defaults = UserDefaults.standard
+        defaults.set(textFieldCm.text, forKey: "length_centimeter")
+        defaults.set(textFieldMm.text, forKey: "length_millimeter")
+        defaults.set(textFieldMile.text, forKey: "length_mile")
+        defaults.set(textFieldKm.text, forKey: "length_kilometer")
+        defaults.set(textFieldMetre.text, forKey: "length_metre")
+        defaults.set(textFieldYard.text, forKey: "length_yard")
+        defaults.set(textFieldInch.text, forKey: "length_inch")
+        defaults.synchronize()
+    }
+    
+    //  retrieving saved data for text fields when app opening
+    func retrievingDataInAppOpen(){
+        let defaults = UserDefaults.standard
+        textFieldCm.text = defaults.string(forKey: "length_centimeter")
+        textFieldMm.text = defaults.string(forKey: "length_millimeter")
+        textFieldMile.text = defaults.string(forKey: "length_mile")
+        textFieldKm.text = defaults.string(forKey: "length_kilometer")
+        textFieldMetre.text = defaults.string(forKey: "length_metre")
+        textFieldYard.text = defaults.string(forKey: "length_yard")
+        textFieldInch.text = defaults.string(forKey: "length_inch")
+    }
     
     // reseting text fields to default sate
     func resetTextFieldsToDefaultSate(){
