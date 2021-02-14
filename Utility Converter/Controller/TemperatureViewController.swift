@@ -57,27 +57,27 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
             switch TemperatureUnits(rawValue: sender.tag)! {
             
             case .farenheit:
-                let farenheitUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.fahrenheit)
-                temperature.farenheit = farenheitUnitObj.value
-                temperature.celsius = farenheitUnitObj.converted(to: .celsius).value
-                temperature.kelvin = farenheitUnitObj.converted(to: .kelvin).value
+                let temperatureUnitObjForFahrenheit = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.fahrenheit)
+                temperature.farenheit = temperatureUnitObjForFahrenheit.value
+                temperature.celsius = temperatureUnitObjForFahrenheit.converted(to: .celsius).value
+                temperature.kelvin = temperatureUnitObjForFahrenheit.converted(to: .kelvin).value
                 
                 textFieldCelsius.text = "\(formatTextFieldValue(data: temperature.celsius))"
                 textFieldKelvin.text = "\(formatTextFieldValue(data: temperature.kelvin))"
             case .celsius:
-                let celsiusUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.celsius)
-                temperature.celsius = celsiusUnitObj.value
-                temperature.farenheit = celsiusUnitObj.converted(to: .fahrenheit).value
-                temperature.kelvin = celsiusUnitObj.converted(to: .kelvin).value
+                let temperatureUnitObjForCelsius = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.celsius)
+                temperature.celsius = temperatureUnitObjForCelsius.value
+                temperature.farenheit = temperatureUnitObjForCelsius.converted(to: .fahrenheit).value
+                temperature.kelvin = temperatureUnitObjForCelsius.converted(to: .kelvin).value
                 
                 textFieldFahrenheit.text = "\(formatTextFieldValue(data: temperature.farenheit))"
                 textFieldKelvin.text = "\(formatTextFieldValue(data: temperature.kelvin))"
                 
             case .kelvin:
-                let kelvinUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.kelvin)
-                temperature.kelvin = kelvinUnitObj.value
-                temperature.celsius = kelvinUnitObj.converted(to: .celsius).value
-                temperature.farenheit = kelvinUnitObj.converted(to: .fahrenheit).value
+                let temperatureUnitObjForLelvin = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.kelvin)
+                temperature.kelvin = temperatureUnitObjForLelvin.value
+                temperature.celsius = temperatureUnitObjForLelvin.converted(to: .celsius).value
+                temperature.farenheit = temperatureUnitObjForLelvin.converted(to: .fahrenheit).value
                 
                 textFieldCelsius.text = "\(formatTextFieldValue(data: temperature.celsius))"
                 textFieldFahrenheit.text = "\(formatTextFieldValue(data: temperature.farenheit))"
