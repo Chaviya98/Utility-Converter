@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Utility Converter
+
+  Created by Chaveen Ellawela on 2021-02-14.
+  
+*/
+"AppName" = "Utility Converter";
+"SpeedHelpTextSectionA" = "\u{2022} Utility Converter App supports speed conventions such as metres/sec, km/hour, miles/hour, nautical miles/hour (knot).";
+"CommonHelpTextSectionB" = "\u{2022} You can save up to 5 conventions at a time and the history option will list only the last 5 conversions per category.";
+"LengthHelpTextSectionA" =  "\u{2022} Utility Converter App supports length conventions such as metre, km, mile, cm, mm, yard, inch.";
+"TemperatureHelpTextSectionA" =  "\u{2022} Utility Converter App supports temperature conventions such as Celsius, Fahrenheit, Kelvin.";
+"VolumeHelpTextSectionA" =  "\u{2022} Utility Converter App supports volume convention such as UK gallon, litre, UK pint, fluid ounce, millilitre.";
+"WeightHelpTextSectionA" =  "\u{2022} Utility Converter App supports weight conventions such as Kg, grams, ounces, pounds, stone-pounds.";
+

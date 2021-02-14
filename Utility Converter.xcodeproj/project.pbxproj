@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1358AB25D82CCF000AD7B8 /* WeightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1358AA25D82CCF000AD7B8 /* WeightController.swift */; };
+		4E1358BB25D82F77000AD7B8 /* LengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1358BA25D82F77000AD7B8 /* LengthViewController.swift */; };
+		4E1358C025D830A6000AD7B8 /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1358BF25D830A6000AD7B8 /* Length.swift */; };
+		4E1358CF25D8B6FF000AD7B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E1358D125D8B6FF000AD7B8 /* Localizable.strings */; };
 		4E27C87C25D7CB73003257F4 /* CustomHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E27C87B25D7CB73003257F4 /* CustomHistoryView.xib */; };
 		4E27C88125D7CE5F003257F4 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */; };
 		4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88925D7D1D1003257F4 /* Temperature.swift */; };
 		4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */; };
 		4E27C89425D7F4A0003257F4 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C89325D7F49F003257F4 /* ErrorMessage.swift */; };
+		4E27C89C25D80704003257F4 /* CustomHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C89B25D80704003257F4 /* CustomHistoryView.swift */; };
 		4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */; };
 		4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */; };
 		4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5C25D3B6AC00A73E77 /* ViewController.swift */; };
@@ -46,11 +51,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E1358AA25D82CCF000AD7B8 /* WeightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightController.swift; sourceTree = "<group>"; };
+		4E1358BA25D82F77000AD7B8 /* LengthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthViewController.swift; sourceTree = "<group>"; };
+		4E1358BF25D830A6000AD7B8 /* Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Length.swift; path = ../../../../../Length.swift; sourceTree = "<group>"; };
+		4E1358D025D8B6FF000AD7B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E27C87B25D7CB73003257F4 /* CustomHistoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHistoryView.xib; sourceTree = "<group>"; };
 		4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4E27C88925D7D1D1003257F4 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		4E27C89325D7F49F003257F4 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		4E27C89B25D80704003257F4 /* CustomHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHistoryView.swift; sourceTree = "<group>"; };
 		4E731F5525D3B6AC00A73E77 /* Utility Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utility Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +121,7 @@
 			children = (
 				4E27C88925D7D1D1003257F4 /* Temperature.swift */,
 				4E27C89325D7F49F003257F4 /* ErrorMessage.swift */,
+				4E1358BF25D830A6000AD7B8 /* Length.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 				4E731F6425D3B6B000A73E77 /* Assets.xcassets */,
 				4E731F6925D3B6B000A73E77 /* Info.plist */,
 				4E731F6125D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld */,
+				4E1358D125D8B6FF000AD7B8 /* Localizable.strings */,
 			);
 			path = "Utility Converter";
 			sourceTree = "<group>";
@@ -197,6 +209,9 @@
 				4E731FC825D436FF00A73E77 /* DataManagementStore.swift */,
 				4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */,
 				4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */,
+				4E27C89B25D80704003257F4 /* CustomHistoryView.swift */,
+				4E1358AA25D82CCF000AD7B8 /* WeightController.swift */,
+				4E1358BA25D82F77000AD7B8 /* LengthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E27C87C25D7CB73003257F4 /* CustomHistoryView.xib in Resources */,
+				4E1358CF25D8B6FF000AD7B8 /* Localizable.strings in Resources */,
 				4E731F6825D3B6B000A73E77 /* LaunchScreen.storyboard in Resources */,
 				4E731F6525D3B6B000A73E77 /* Assets.xcassets in Resources */,
 				4E731F6025D3B6AC00A73E77 /* Main.storyboard in Resources */,
@@ -341,12 +357,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1358BB25D82F77000AD7B8 /* LengthViewController.swift in Sources */,
 				4E731FC925D436FF00A73E77 /* DataManagementStore.swift in Sources */,
+				4E1358AB25D82CCF000AD7B8 /* WeightController.swift in Sources */,
 				4E27C88125D7CE5F003257F4 /* CustomKeyboard.swift in Sources */,
 				4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */,
 				4E731F6325D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld in Sources */,
 				4E27C89425D7F4A0003257F4 /* ErrorMessage.swift in Sources */,
 				4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */,
+				4E27C89C25D80704003257F4 /* CustomHistoryView.swift in Sources */,
+				4E1358C025D830A6000AD7B8 /* Length.swift in Sources */,
 				4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */,
 				4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */,
 				4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */,
@@ -388,6 +408,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4E1358D125D8B6FF000AD7B8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E1358D025D8B6FF000AD7B8 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4E731F5E25D3B6AC00A73E77 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
