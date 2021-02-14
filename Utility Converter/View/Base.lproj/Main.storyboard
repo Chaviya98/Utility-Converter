@@ -870,8 +870,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Length" id="h9z-rC-med">
-                        <barButtonItem key="leftBarButtonItem" title="History" id="EQc-8P-6di"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="yLg-sv-dxj"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="EQc-8P-6di">
+                            <connections>
+                                <action selector="historyBtnPressed:" destination="8lZ-Ku-k3y" id="D05-fq-98h"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="yLg-sv-dxj">
+                            <connections>
+                                <action selector="saveBtnPressed:" destination="8lZ-Ku-k3y" id="XX5-0x-g9R"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="customKeyboard" destination="la7-F2-spd" id="5sc-8C-7SC"/>
@@ -1245,7 +1253,7 @@
         <!--Speed-->
         <scene sceneID="iNq-ic-fOR">
             <objects>
-                <viewController id="wAq-Tj-F7w" sceneMemberID="viewController">
+                <viewController id="wAq-Tj-F7w" customClass="SpeedViewController" customModule="Utility_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzn-9d-wzd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1259,7 +1267,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8A-aX-yre">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="96"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters/Sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qN-yi-tck">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metres/Sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qN-yi-tck">
                                                         <rect key="frame" x="0.0" y="36" width="110" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="S6P-ke-Zgu"/>
@@ -1268,10 +1276,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCV-LM-WOM">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCV-LM-WOM">
                                                         <rect key="frame" x="130" y="34" width="254" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="speedViewTextFieldValueChanged:" destination="wAq-Tj-F7w" eventType="editingChanged" id="km5-e7-aPV"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -1295,10 +1306,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-UZ-myy">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2a-UZ-myy">
                                                         <rect key="frame" x="130" y="31" width="254" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="speedViewTextFieldValueChanged:" destination="wAq-Tj-F7w" eventType="editingChanged" id="vX3-FN-xc5"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -1322,10 +1336,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mxW-Hd-p1g">
+                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mxW-Hd-p1g">
                                                         <rect key="frame" x="130" y="31" width="254" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="speedViewTextFieldValueChanged:" destination="wAq-Tj-F7w" eventType="editingChanged" id="oaW-Db-AgF"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1342,7 +1359,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grI-0N-DC5">
                                                 <rect key="frame" x="0.0" y="288" width="384" height="96"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kont/Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tI-Fm-Ptf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konts/Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tI-Fm-Ptf">
                                                         <rect key="frame" x="0.0" y="38" width="110" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="0NB-IK-CWC"/>
@@ -1351,10 +1368,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-yC-EaX">
+                                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-yC-EaX">
                                                         <rect key="frame" x="130" y="31" width="254" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="speedViewTextFieldValueChanged:" destination="wAq-Tj-F7w" eventType="editingChanged" id="CFh-FR-MYx"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1397,9 +1417,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Speed" id="y4y-WH-oNb">
-                        <barButtonItem key="leftBarButtonItem" title="History" id="F7J-M6-mUu"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="2wh-eB-ZbS"/>
+                        <barButtonItem key="leftBarButtonItem" title="History" id="F7J-M6-mUu">
+                            <connections>
+                                <action selector="historyBtnPressed:" destination="wAq-Tj-F7w" id="Z7v-Xe-rx0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2wh-eB-ZbS">
+                            <connections>
+                                <action selector="saveBtnPressed:" destination="wAq-Tj-F7w" id="tFi-mw-Rbr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="customKeyboard" destination="um1-FE-KtN" id="XpI-sV-N39"/>
+                        <outlet property="textFieldKmPerHour" destination="r2a-UZ-myy" id="CpG-Xe-JO0"/>
+                        <outlet property="textFieldKnotsPerHour" destination="3cS-yC-EaX" id="ZRF-ug-sUX"/>
+                        <outlet property="textFieldMetresPerSec" destination="hCV-LM-WOM" id="CPi-rO-gwX"/>
+                        <outlet property="textFieldMilesPerHour" destination="mxW-Hd-p1g" id="C4n-vg-OR9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAo-ZY-9Mw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
