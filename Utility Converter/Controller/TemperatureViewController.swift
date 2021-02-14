@@ -20,8 +20,6 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
     var temperature : Temperature = Temperature(farenheit: 0.0, celsius: 0.0, kelvin: 0.0)
-    let defultKelvinValueForCelsius0 : Double = 273.15
-    let farenheitValueForCelsius0 : Double = 32.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +75,6 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
                 
             case .kelvin:
                 let kelvinUnitObj = Measurement(value:doubleTextFieldValue, unit: UnitTemperature.kelvin)
-                
                 temperature.kelvin = kelvinUnitObj.value
                 temperature.celsius = kelvinUnitObj.converted(to: .celsius).value
                 temperature.farenheit = kelvinUnitObj.converted(to: .fahrenheit).value
@@ -103,13 +100,13 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
         
         if(textFieldFahrenheit.text != "" && textFieldCelsius.text != "" && textFieldKelvin.text != ""){
             DataManagementStore.saveDataToStore(key: "temperature", value: creatingHistoryData())
-            alert = UIAlertController(title: "Succssfully Saved !", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert = UIAlertController(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: nil, preferredStyle: UIAlertController.Style.alert)
             
         } else {
-            alert = UIAlertController(title: "Save Failed !", message: "Please check the text fields and try again", preferredStyle: UIAlertController.Style.alert)
+            alert = UIAlertController(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message:NSLocalizedString("FailAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)
         }
         
-        alert!.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert!.addAction(UIAlertAction(title: NSLocalizedString("AlertOkButtonTitle", comment: ""), style: UIAlertAction.Style.default, handler: nil))
         self.present(alert!, animated: true, completion: nil)
     }
     
@@ -123,8 +120,8 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
             destination.storage = storage
             self.present(destination, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: "No History !", message: "No saved history found. Plase click save to add calculations to history.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            let alert = UIAlertController(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("AlertOkButtonTitle", comment: ""), style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
