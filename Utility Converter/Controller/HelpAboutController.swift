@@ -29,8 +29,8 @@ class HelpAboutController: UIViewController {
         self.headerImageView.layer.cornerRadius = 30
         self.headerImageView.clipsToBounds = true
         
-        self.primaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionA", comment: "")
-        self.secondaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionB", comment: "")
+        self.primaryTextArea.text = "\u{2022} \(NSLocalizedString("SpeedHelpTextSectionA", comment: ""))"
+        self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
     }
     
     @IBAction func headerNavBar(_ sender: Any) {
@@ -38,29 +38,29 @@ class HelpAboutController: UIViewController {
         if(headerNavBarSegementController.selectedSegmentIndex == 0)
         {
             headerImageView.image = UIImage(named: "SpeedHome")
-            primaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionA", comment: "")
-            secondaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionB", comment: "")
+            primaryTextArea.text = "\u{2022} \(NSLocalizedString("SpeedHelpTextSectionA", comment: ""))"
+            self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
         }
         else if(headerNavBarSegementController.selectedSegmentIndex == 1)
         {
             headerImageView.image = UIImage(named: "LengthHome")
-            primaryTextArea.text = NSLocalizedString("LengthHelpTextSectionA", comment: "")
-            secondaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionB", comment: "")
+            primaryTextArea.text = "\u{2022} \(NSLocalizedString("LengthHelpTextSectionA", comment: ""))"
+            self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
         }else if(headerNavBarSegementController.selectedSegmentIndex == 2)
         {
             headerImageView.image = UIImage(named: "TemperatureHome")
-            primaryTextArea.text = NSLocalizedString("TemperatureHelpTextSectionA", comment: "")
-            secondaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionB", comment: "")
+            primaryTextArea.text = "\u{2022} \(NSLocalizedString("TemperatureHelpTextSectionA", comment: ""))"
+            self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
         }else if(headerNavBarSegementController.selectedSegmentIndex == 3)
         {
             headerImageView.image = UIImage(named: "VolumeHome")
-            primaryTextArea.text = NSLocalizedString("VolumeHelpTextSectionA", comment: "")
-            secondaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionB", comment: "")
+            primaryTextArea.text = "\u{2022} \(NSLocalizedString("VolumeHelpTextSectionA", comment: ""))"
+            self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
         }else if(headerNavBarSegementController.selectedSegmentIndex == 4)
         {
             headerImageView.image = UIImage(named: "WeightHome")
-            primaryTextArea.text = NSLocalizedString("WeightHelpTextSectionA", comment: "")
-            secondaryTextArea.text = NSLocalizedString("SpeedHelpTextSectionB", comment: "")
+            primaryTextArea.text = "\u{2022} \(NSLocalizedString("WeightHelpTextSectionA", comment: ""))"
+            self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
         }
     }
 }

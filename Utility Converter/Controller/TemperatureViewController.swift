@@ -85,15 +85,8 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-    
-    // creating histroy data
-    func creatingHistoryData() -> String{
-        return "Fahrenheit --> \(formatTextFieldValue(data: temperature.farenheit))\n" +
-            "Celsius --> \(formatTextFieldValue(data: temperature.celsius))\n" +
-            "Kelvin --> \(formatTextFieldValue(data: temperature.kelvin))"
-    }
-    
-    
+
+
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         var alert : UIAlertController?
@@ -126,7 +119,12 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    // creating histroy data
+    func creatingHistoryData() -> String{
+        return "Fahrenheit --> \(formatTextFieldValue(data: temperature.farenheit))\n" +
+            "Celsius --> \(formatTextFieldValue(data: temperature.celsius))\n" +
+            "Kelvin --> \(formatTextFieldValue(data: temperature.kelvin))"
+    }
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
@@ -151,9 +149,6 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
         textFieldFahrenheit.text = ""
         textFieldCelsius.text = ""
         textFieldKelvin.text = ""
-        textFieldFahrenheit.placeholder = "0"
-        textFieldCelsius.placeholder = "0"
-        textFieldKelvin.placeholder = "0"
     }
     
     // disabling the default keyboard

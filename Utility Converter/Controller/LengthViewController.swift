@@ -264,14 +264,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
         textFieldMm.text = ""
         textFieldYard.text = ""
         textFieldInch.text = ""
-        
-        textFieldMetre.placeholder = "0"
-        textFieldKm.placeholder = "0"
-        textFieldMile.placeholder = "0"
-        textFieldCm.placeholder = "0"
-        textFieldMm.placeholder = "0"
-        textFieldYard.placeholder = "0"
-        textFieldInch.placeholder = "0"
     }
     
     
