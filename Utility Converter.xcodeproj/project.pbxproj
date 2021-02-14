@@ -14,11 +14,11 @@
 		4E1358E725D8D11A000AD7B8 /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1358E625D8D11A000AD7B8 /* Speed.swift */; };
 		4E1358EF25D8E91B000AD7B8 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1358EE25D8E91B000AD7B8 /* Weight.swift */; };
 		4E13590825D8ED36000AD7B8 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13590725D8ED36000AD7B8 /* WeightViewController.swift */; };
-		4E27C87C25D7CB73003257F4 /* CustomHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E27C87B25D7CB73003257F4 /* CustomHistoryView.xib */; };
+		4E13591A25D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13591925D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift */; };
+		4E13592525D92814000AD7B8 /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13592425D92814000AD7B8 /* HistoryTableCell.swift */; };
 		4E27C88125D7CE5F003257F4 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */; };
 		4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88925D7D1D1003257F4 /* Temperature.swift */; };
 		4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */; };
-		4E27C89C25D80704003257F4 /* CustomHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C89B25D80704003257F4 /* CustomHistoryView.swift */; };
 		4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */; };
 		4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */; };
 		4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5C25D3B6AC00A73E77 /* ViewController.swift */; };
@@ -60,11 +60,11 @@
 		4E1358E625D8D11A000AD7B8 /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
 		4E1358EE25D8E91B000AD7B8 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
 		4E13590725D8ED36000AD7B8 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
-		4E27C87B25D7CB73003257F4 /* CustomHistoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHistoryView.xib; sourceTree = "<group>"; };
+		4E13591925D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+DisplayAlert.swift"; sourceTree = "<group>"; };
+		4E13592425D92814000AD7B8 /* HistoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
 		4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4E27C88925D7D1D1003257F4 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		4E27C89B25D80704003257F4 /* CustomHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHistoryView.swift; sourceTree = "<group>"; };
 		4E731F5525D3B6AC00A73E77 /* Utility Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utility Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,17 +112,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E27C87A25D7CB51003257F4 /* History */ = {
+		4E13591825D9241B000AD7B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4E27C87B25D7CB73003257F4 /* CustomHistoryView.xib */,
+				4E13591925D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift */,
 			);
-			path = History;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4E27C88825D7D1C6003257F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4E13591825D9241B000AD7B8 /* Extensions */,
 				4E27C88925D7D1D1003257F4 /* Temperature.swift */,
 				4E1358BF25D830A6000AD7B8 /* Length.swift */,
 				4E1358E625D8D11A000AD7B8 /* Speed.swift */,
@@ -188,7 +189,6 @@
 		4E731F8E25D3C8A700A73E77 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4E27C87A25D7CB51003257F4 /* History */,
 				4E731FB725D4139D00A73E77 /* Keyboard */,
 				4E731F5E25D3B6AC00A73E77 /* Main.storyboard */,
 				4E731F6625D3B6B000A73E77 /* LaunchScreen.storyboard */,
@@ -214,10 +214,10 @@
 				4E731FC825D436FF00A73E77 /* DataManagementStore.swift */,
 				4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */,
 				4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */,
-				4E27C89B25D80704003257F4 /* CustomHistoryView.swift */,
 				4E1358BA25D82F77000AD7B8 /* LengthViewController.swift */,
 				4E1358DE25D8D0F2000AD7B8 /* SpeedViewController.swift */,
 				4E13590725D8ED36000AD7B8 /* WeightViewController.swift */,
+				4E13592425D92814000AD7B8 /* HistoryTableCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -333,7 +333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E27C87C25D7CB73003257F4 /* CustomHistoryView.xib in Resources */,
 				4E1358CF25D8B6FF000AD7B8 /* Localizable.strings in Resources */,
 				4E731F6825D3B6B000A73E77 /* LaunchScreen.storyboard in Resources */,
 				4E731F6525D3B6B000A73E77 /* Assets.xcassets in Resources */,
@@ -370,9 +369,10 @@
 				4E27C88125D7CE5F003257F4 /* CustomKeyboard.swift in Sources */,
 				4E1358DF25D8D0F2000AD7B8 /* SpeedViewController.swift in Sources */,
 				4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */,
+				4E13591A25D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift in Sources */,
 				4E731F6325D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld in Sources */,
 				4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */,
-				4E27C89C25D80704003257F4 /* CustomHistoryView.swift in Sources */,
+				4E13592525D92814000AD7B8 /* HistoryTableCell.swift in Sources */,
 				4E1358C025D830A6000AD7B8 /* Length.swift in Sources */,
 				4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */,
 				4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */,

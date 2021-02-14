@@ -119,6 +119,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
+            destination.storageType = "speed"
             self.present(destination, animated: true, completion: nil)
         }else{
             let alert = UIAlertController(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)

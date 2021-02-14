@@ -22,9 +22,9 @@
                             <subviews>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnX-HJ-hyM">
                                     <rect key="frame" x="0.0" y="0.0" width="134.5" height="67"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="1">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="bQY-kW-ept"/>
@@ -32,9 +32,9 @@
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiz-kQ-ZSp">
                                     <rect key="frame" x="139.5" y="0.0" width="135" height="67"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="2">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="alW-wK-geb"/>
@@ -42,9 +42,9 @@
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cA-LO-uho">
                                     <rect key="frame" x="279.5" y="0.0" width="134.5" height="67"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="3">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="ayH-rD-FDp"/>
@@ -57,9 +57,9 @@
                             <subviews>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFO-i7-4pY">
                                     <rect key="frame" x="0.0" y="0.0" width="134.5" height="66.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="4">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="3SC-73-w8L"/>
@@ -67,9 +67,9 @@
                                 </button>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f4-SM-J55">
                                     <rect key="frame" x="139.5" y="0.0" width="135" height="66.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="5">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="WYk-e1-8KQ"/>
@@ -77,9 +77,9 @@
                                 </button>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN8-sU-pdn">
                                     <rect key="frame" x="279.5" y="0.0" width="134.5" height="66.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="6">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="lyK-qO-xX0"/>
@@ -92,9 +92,9 @@
                             <subviews>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNj-rC-flG">
                                     <rect key="frame" x="0.0" y="0.0" width="134.5" height="67"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="7">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="C3H-gd-Zd2"/>
@@ -102,9 +102,9 @@
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6k-i6-aWL">
                                     <rect key="frame" x="139.5" y="0.0" width="135" height="67"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="8">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="OCA-Vl-LQy"/>
@@ -112,9 +112,9 @@
                                 </button>
                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EO4-Sr-z1M">
                                     <rect key="frame" x="279.5" y="0.0" width="134.5" height="67"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="9">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="iqz-X0-Txi"/>
@@ -127,9 +127,9 @@
                             <subviews>
                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2H-G4-zSE">
                                     <rect key="frame" x="0.0" y="0.0" width="134.5" height="66.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                     <state key="normal" title=".">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="hMQ-oc-TS8"/>
@@ -137,9 +137,9 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHG-Wo-kPF">
                                     <rect key="frame" x="139.5" y="0.0" width="135" height="66.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <state key="normal" title="0">
-                                        <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
                                         <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="I4G-Vn-j9e"/>
@@ -150,10 +150,11 @@
                                     <subviews>
                                         <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-3I-mnT">
                                             <rect key="frame" x="0.0" y="0.0" width="134.5" height="33"/>
-                                            <color key="tintColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" image="delete.left" catalog="system">
-                                                <color key="titleColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="titleShadowColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
                                                 <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="lpV-Ue-nra"/>
@@ -161,7 +162,8 @@
                                         </button>
                                         <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8V-L2-cRb">
                                             <rect key="frame" x="0.0" y="33" width="134.5" height="33.5"/>
-                                            <color key="tintColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="NEG"/>
                                             <connections>
                                                 <action selector="keyboardBtnPressed:" destination="-1" eventType="touchUpInside" id="PDR-8D-PMb"/>
