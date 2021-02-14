@@ -88,9 +88,9 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // creating histroy data
     func creatingHistoryData() -> String{
-        return "Fahrenheit --> \(temperature.farenheit)\n" +
-            "Celsius --> \(temperature.celsius)\n" +
-            "Kelvin --> \(temperature.kelvin)"
+        return "Fahrenheit --> \(formatTextFieldValue(data: temperature.farenheit))\n" +
+            "Celsius --> \(formatTextFieldValue(data: temperature.celsius))\n" +
+            "Kelvin --> \(formatTextFieldValue(data: temperature.kelvin))"
     }
     
     

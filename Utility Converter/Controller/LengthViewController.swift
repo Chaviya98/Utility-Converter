@@ -221,13 +221,13 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     }
     // creating histroy data
     func creatingHistoryData() -> String{
-        return "Centimeters --> \(length.cm)\n" +
-            "Millimeters --> \(length.mm)\n" +
-            "Miles --> \(length.mile)\n" +
-            "Kilometers --> \(length.km)\n" +
-            "Meters --> \(length.metre)\n" +
-            "Yards --> \(length.yard)\n" +
-            "Inches --> \(length.inch)"
+        return "Centimeters --> \(formatTextFieldValue(data: length.cm))\n" +
+            "Millimeters --> \(formatTextFieldValue(data: length.mm))\n" +
+            "Miles --> \(formatTextFieldValue(data: length.mile))\n" +
+            "Kilometers --> \(formatTextFieldValue(data: length.km))\n" +
+            "Meters --> \(formatTextFieldValue(data: length.metre))\n" +
+            "Yards --> \(formatTextFieldValue(data: length.yard))\n" +
+            "Inches --> \(formatTextFieldValue(data: length.inch))"
     }
     
     // saving available data in the text fields when app closing
