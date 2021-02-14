@@ -24,6 +24,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
     var length : Length = Length(cm: 0.0, mm: 0.0, mile: 0.0, km: 0.0, metre: 0.0, yard: 0.0, inch: 0.0)
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -233,7 +234,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        let defaults = UserDefaults.standard
         defaults.set(textFieldCm.text, forKey: "length_centimeter")
         defaults.set(textFieldMm.text, forKey: "length_millimeter")
         defaults.set(textFieldMile.text, forKey: "length_mile")
@@ -246,7 +246,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        let defaults = UserDefaults.standard
         textFieldCm.text = defaults.string(forKey: "length_centimeter")
         textFieldMm.text = defaults.string(forKey: "length_millimeter")
         textFieldMile.text = defaults.string(forKey: "length_mile")
@@ -281,6 +280,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(format: "%.3f", data)
+        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
     }
 }

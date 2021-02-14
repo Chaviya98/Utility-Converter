@@ -19,4 +19,5 @@
 "NoHistoryAlertMsgTitle" = "No History !";
 "NoHistoryAlertMsgDescription" = "No saved history found. Plase click save to add calculations to history.";
 "AlertOkButtonTitle" = "OK";
-
+"SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing";
+"SettingChangedFailedMsgDescription" = "Please enter a value integer value";

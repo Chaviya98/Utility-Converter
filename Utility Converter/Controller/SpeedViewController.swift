@@ -23,6 +23,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
     var speed : Speed = Speed(metresPerSec: 0.0, kmPerHour: 0.0, milesPerHour: 0.0, knotsPerHour: 0.0)
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,7 +148,6 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        let defaults = UserDefaults.standard
         defaults.set(textFieldMetresPerSec.text, forKey: "speed_metrespersec")
         defaults.set(textFieldKmPerHour.text, forKey: "speed_kmperhour")
         defaults.set(textFieldMilesPerHour.text, forKey: "speed_milesperhour")
@@ -157,7 +157,6 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        let defaults = UserDefaults.standard
         textFieldMetresPerSec.text = defaults.string(forKey: "speed_metrespersec")
         textFieldKmPerHour.text = defaults.string(forKey: "speed_kmperhour")
         textFieldMilesPerHour.text = defaults.string(forKey: "speed_milesperhour")
@@ -190,6 +189,6 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(format: "%.3f", data)
+        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
     }
 }

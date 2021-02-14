@@ -23,7 +23,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        settingUpTheRoundUpDecimalNumber()
     }
     
     private func setupUI(){
@@ -126,5 +126,8 @@ class HomeController: UIViewController {
     }
     
     
-    
+    private func settingUpTheRoundUpDecimalNumber(){
+        let defaults = UserDefaults.standard
+        defaults.set(2, forKey: "roundup_decimalnumber")
+    }
 }

@@ -20,15 +20,31 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
     var temperature : Temperature = Temperature(farenheit: 0.0, celsius: 0.0, kelvin: 0.0)
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         self.assignDelegates()
         resetTextFieldsToDefaultSate()
         disableDefaultKeyboard()
         retrievingDataInAppOpen()
     }
     
+    
+    private func setupUI(){
+        textFieldFahrenheit.layer.borderWidth = 1
+        textFieldFahrenheit.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldFahrenheit.layer.cornerRadius = 10
+        
+        textFieldCelsius.layer.borderWidth = 1
+        textFieldCelsius.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldCelsius.layer.cornerRadius = 10
+        
+        textFieldKelvin.layer.borderWidth = 1
+        textFieldKelvin.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldKelvin.layer.cornerRadius = 10
+    }
     override func viewWillDisappear(_ animated: Bool) {
         savingDataInAppClose()
     }
@@ -129,7 +145,6 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        let defaults = UserDefaults.standard
         defaults.set(textFieldFahrenheit.text, forKey: "temperature_fahrenheit")
         defaults.set(textFieldCelsius.text, forKey: "temperature_celsius")
         defaults.set(textFieldKelvin.text, forKey: "temperature_kelvin")
@@ -138,7 +153,6 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        let defaults = UserDefaults.standard
         textFieldFahrenheit.text = defaults.string(forKey: "temperature_fahrenheit")
         textFieldCelsius.text = defaults.string(forKey: "temperature_celsius")
         textFieldKelvin.text = defaults.string(forKey: "temperature_kelvin")
@@ -161,7 +175,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(format: "%.2f", data)
+        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
     }
     
 }

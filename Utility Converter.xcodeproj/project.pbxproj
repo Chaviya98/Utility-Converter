@@ -16,6 +16,8 @@
 		4E13590825D8ED36000AD7B8 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13590725D8ED36000AD7B8 /* WeightViewController.swift */; };
 		4E13591A25D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13591925D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift */; };
 		4E13592525D92814000AD7B8 /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13592425D92814000AD7B8 /* HistoryTableCell.swift */; };
+		4E13593925D96E26000AD7B8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13593825D96E26000AD7B8 /* SettingViewController.swift */; };
+		4E13594125D9780C000AD7B8 /* Double+RoundToDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E13594025D9780C000AD7B8 /* Double+RoundToDecimal.swift */; };
 		4E27C88125D7CE5F003257F4 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */; };
 		4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88925D7D1D1003257F4 /* Temperature.swift */; };
 		4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */; };
@@ -62,6 +64,8 @@
 		4E13590725D8ED36000AD7B8 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
 		4E13591925D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+DisplayAlert.swift"; sourceTree = "<group>"; };
 		4E13592425D92814000AD7B8 /* HistoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
+		4E13593825D96E26000AD7B8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4E13594025D9780C000AD7B8 /* Double+RoundToDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+RoundToDecimal.swift"; sourceTree = "<group>"; };
 		4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4E27C88925D7D1D1003257F4 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4E13591925D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift */,
+				4E13594025D9780C000AD7B8 /* Double+RoundToDecimal.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				4E1358DE25D8D0F2000AD7B8 /* SpeedViewController.swift */,
 				4E13590725D8ED36000AD7B8 /* WeightViewController.swift */,
 				4E13592425D92814000AD7B8 /* HistoryTableCell.swift */,
+				4E13593825D96E26000AD7B8 /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -372,11 +378,13 @@
 				4E13591A25D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift in Sources */,
 				4E731F6325D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld in Sources */,
 				4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */,
+				4E13594125D9780C000AD7B8 /* Double+RoundToDecimal.swift in Sources */,
 				4E13592525D92814000AD7B8 /* HistoryTableCell.swift in Sources */,
 				4E1358C025D830A6000AD7B8 /* Length.swift in Sources */,
 				4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */,
 				4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */,
 				4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */,
+				4E13593925D96E26000AD7B8 /* SettingViewController.swift in Sources */,
 				4E731FC425D4355700A73E77 /* TemperatureViewController.swift in Sources */,
 				4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */,
 				4E731FB325D3FB7000A73E77 /* HomePageController.swift in Sources */,

@@ -22,14 +22,42 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
     var weight : Weight = Weight(Kg: 0.0, Grams: 0.0, Ounces: 0.0, Pounds: 0.0, Stonepounds: 0.0)
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         self.assignDelegates()
         resetTextFieldsToDefaultSate()
         disableDefaultKeyboard()
         retrievingDataInAppOpen()
         
+    }
+    
+    private func setupUI(){
+        textFieldKg.layer.borderWidth = 1
+        textFieldKg.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldKg.layer.cornerRadius = 10
+        
+        textFieldGram.layer.borderWidth = 1
+        textFieldGram.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldGram.layer.cornerRadius = 10
+        
+        textFieldOunce.layer.borderWidth = 1
+        textFieldOunce.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldOunce.layer.cornerRadius = 10
+        
+        textFieldPound.layer.borderWidth = 1
+        textFieldPound.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldPound.layer.cornerRadius = 10
+        
+        textFieldStone.layer.borderWidth = 1
+        textFieldStone.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldStone.layer.cornerRadius = 10
+        
+        textFieldStonePounds.layer.borderWidth = 1
+        textFieldStonePounds.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldStonePounds.layer.cornerRadius = 10
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -209,7 +237,6 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        let defaults = UserDefaults.standard
         defaults.set(textFieldKg.text, forKey: "weight_kg")
         defaults.set(textFieldGram.text, forKey: "weight_grams")
         defaults.set(textFieldOunce.text, forKey: "weight_ounce")
@@ -221,7 +248,6 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        let defaults = UserDefaults.standard
         textFieldKg.text = defaults.string(forKey: "weight_kg")
         textFieldGram.text = defaults.string(forKey: "weight_grams")
         textFieldOunce.text = defaults.string(forKey: "weight_ounce")
@@ -253,7 +279,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(format: "%.2f", data)
+        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
     }
     
 }
