@@ -73,11 +73,11 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         if let number = Int(roundUpDecimalTextField.text!) {
-            if (number < 5) {
+            if (number < Int(NSLocalizedString("RoundUpDecimalMaxAmout", comment: "")) ?? 5) {
                 defaults.set(number, forKey: "roundup_decimalnumber")
                 dismiss(animated: true, completion: nil)
             } else {
-                displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("roundUpDecimalMaxAmoutExceedMsgDescription", comment: ""))
+                displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("RoundUpDecimalMaxAmoutExceedMsgDescription", comment: ""))
             }
             
         }else{

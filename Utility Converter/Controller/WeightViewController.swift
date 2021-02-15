@@ -84,8 +84,8 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         if (sender.text == ""){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return }
-            guard let doubleTextFieldValue = Double(textFieldValue) else { return }
+            guard let textFieldValue = sender.text else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
+            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: ""))}
             
             switch WeightUnits(rawValue: sender.tag)! {
             
