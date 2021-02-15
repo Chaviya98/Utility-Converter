@@ -35,8 +35,16 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         roundUpDecimalTextField.layer.borderWidth = 1
         roundUpDecimalTextField.layer.borderColor = UIColor.darkGray.cgColor
         roundUpDecimalTextField.layer.cornerRadius = 10
-        settingDescription.text = "\u{2022} \(NSLocalizedString("SettingDescription", comment: ""))"
-        roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: "roundup_decimalnumber") - 1
+        settingDescription.text = NSLocalizedString("SettingDescription", comment: "")
+        
+        if(defaults.integer(forKey: "roundup_decimalnumber") > 4) {
+            roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: "roundup_decimalnumber") - 1
+        } else {
+            roundUpDecimalNumberSegementController.selectedSegmentIndex = 3
+        }
+        
+        roundUpDecimalTextField.isHidden = true
+        saveBtn.isHidden = true
     }
     
     @IBAction func segementControllerValueChanged(_ sender: UISegmentedControl) {
@@ -50,18 +58,28 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         {
             defaults.set(2, forKey: "roundup_decimalnumber")
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 1
-        }else
+        }else if (roundUpDecimalNumberSegementController.selectedSegmentIndex == 2)
         {
             defaults.set(3, forKey: "roundup_decimalnumber")
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 2
+        } else{
+            roundUpDecimalNumberSegementController.selectedSegmentIndex = 4
+            roundUpDecimalTextField.isHidden = false
+            saveBtn.isHidden = false
+            roundUpDecimalTextField.text = String(defaults.integer(forKey: "roundup_decimalnumber"))
         }
     }
     
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
-        if let number = Int(roundUpDecimalTextField.text!){
-            defaults.set(number, forKey: "roundup_decimalnumber")
-            dismiss(animated: true, completion: nil)
+        if let number = Int(roundUpDecimalTextField.text!) {
+            if (number < 5) {
+                defaults.set(number, forKey: "roundup_decimalnumber")
+                dismiss(animated: true, completion: nil)
+            } else {
+                displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("roundUpDecimalMaxAmoutExceedMsgDescription", comment: ""))
+            }
+            
         }else{
             displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("SettingChangedFailedMsgDescription", comment: ""))
         }

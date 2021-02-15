@@ -21,3 +21,4 @@
 "AlertOkButtonTitle" = "OK";
 "SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing";
 "SettingChangedFailedMsgDescription" = "Please enter a value integer value";
+"roundUpDecimalMaxAmoutExceedMsgDescription" = "Please enter a different value. The maximum value you can enter is 5.";

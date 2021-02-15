@@ -673,9 +673,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.77144420150000004" green="0.49606072899999998" blue="0.9059150815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <segments>
-                                    <segment title="Round Upto 2"/>
-                                    <segment title="Round Upto 3"/>
-                                    <segment title=" Round Upto 4"/>
+                                    <segment title="Round to 2"/>
+                                    <segment title="Round to 3"/>
+                                    <segment title=" Round to 4"/>
+                                    <segment title="Custom"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
