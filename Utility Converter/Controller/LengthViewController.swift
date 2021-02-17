@@ -34,6 +34,36 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
         retrievingDataInAppOpen()
     }
     
+    private func setupUI(){
+        textFieldCm.layer.borderWidth = 1
+        textFieldCm.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldCm.layer.cornerRadius = 10
+        
+        textFieldMm.layer.borderWidth = 1
+        textFieldMm.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldMm.layer.cornerRadius = 10
+        
+        textFieldMile.layer.borderWidth = 1
+        textFieldMile.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldMile.layer.cornerRadius = 10
+        
+        textFieldKm.layer.borderWidth = 1
+        textFieldKm.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldKm.layer.cornerRadius = 10
+        
+        textFieldMetre.layer.borderWidth = 1
+        textFieldMetre.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldMetre.layer.cornerRadius = 10
+        
+        textFieldYard.layer.borderWidth = 1
+        textFieldYard.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldYard.layer.cornerRadius = 10
+        
+        textFieldInch.layer.borderWidth = 1
+        textFieldInch.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldInch.layer.cornerRadius = 10
+    }
+    
     func assignDelegates() {
         textFieldMetre.delegate = self
         textFieldKm.delegate = self

@@ -27,10 +27,29 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         self.assignDelegates()
         resetTextFieldsToDefaultSate()
         disableDefaultKeyboard()
         retrievingDataInAppOpen()
+    }
+    
+    private func setupUI(){
+        textFieldMetresPerSec.layer.borderWidth = 1
+        textFieldMetresPerSec.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldMetresPerSec.layer.cornerRadius = 10
+        
+        textFieldKmPerHour.layer.borderWidth = 1
+        textFieldKmPerHour.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldKmPerHour.layer.cornerRadius = 10
+        
+        textFieldMilesPerHour.layer.borderWidth = 1
+        textFieldMilesPerHour.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldMilesPerHour.layer.cornerRadius = 10
+        
+        textFieldKnotsPerHour.layer.borderWidth = 1
+        textFieldKnotsPerHour.layer.borderColor = UIColor.darkGray.cgColor
+        textFieldKnotsPerHour.layer.cornerRadius = 10
     }
     
     func assignDelegates() {
