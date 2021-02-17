@@ -37,31 +37,40 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         roundUpDecimalTextField.layer.cornerRadius = 10
         settingDescription.text = NSLocalizedString("SettingDescription", comment: "")
         
-        if(defaults.integer(forKey: "roundup_decimalnumber") > 4) {
-            roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: "roundup_decimalnumber") - 1
+        if(defaults.integer(forKey: "roundup_decimalnumber") < 5) {
+            roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: "roundup_decimalnumber") - 2
+            roundUpDecimalTextField.isHidden = true
+            saveBtn.isHidden = true
         } else {
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 3
+            roundUpDecimalTextField.text = String(defaults.integer(forKey: "roundup_decimalnumber"))
+            roundUpDecimalTextField.isHidden = false
+            saveBtn.isHidden = false
         }
-        
-        roundUpDecimalTextField.isHidden = true
-        saveBtn.isHidden = true
+    
     }
     
     @IBAction func segementControllerValueChanged(_ sender: UISegmentedControl) {
         
         if(roundUpDecimalNumberSegementController.selectedSegmentIndex == 0)
         {
-            defaults.set(1, forKey: "roundup_decimalnumber")
+            defaults.set(2, forKey: "roundup_decimalnumber")
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 0
+            roundUpDecimalTextField.isHidden = true
+            saveBtn.isHidden = true
         }
         else if(roundUpDecimalNumberSegementController.selectedSegmentIndex == 1)
         {
-            defaults.set(2, forKey: "roundup_decimalnumber")
+            defaults.set(3, forKey: "roundup_decimalnumber")
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 1
+            roundUpDecimalTextField.isHidden = true
+            saveBtn.isHidden = true
         }else if (roundUpDecimalNumberSegementController.selectedSegmentIndex == 2)
         {
-            defaults.set(3, forKey: "roundup_decimalnumber")
+            defaults.set(4, forKey: "roundup_decimalnumber")
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 2
+            roundUpDecimalTextField.isHidden = true
+            saveBtn.isHidden = true
         } else{
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 4
             roundUpDecimalTextField.isHidden = false

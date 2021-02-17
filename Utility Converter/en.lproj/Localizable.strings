@@ -19,7 +19,7 @@
 "NoHistoryAlertMsgTitle" = "No History !";
 "NoHistoryAlertMsgDescription" = "No saved history found. Plase click save to add calculations to history.";
 "AlertOkButtonTitle" = "OK";
-"SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing";
+"SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing.";
 "SettingChangedFailedMsgDescription" = "Please enter a digit value as the input.";
 "RoundUpDecimalMaxAmout" = "5";
 "RoundUpDecimalMaxAmoutExceedMsgDescription" = "Please enter a different value. The maximum value you can enter is 5.";

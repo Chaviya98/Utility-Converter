@@ -8,18 +8,18 @@
 import Foundation
 
 class Weight {
-    var Kg: Double
-    var Grams: Double
-    var Ounces: Double
-    var Pounds: Double
-    var Stonepounds: Double
+    var kg: Double
+    var grams: Double
+    var ounces: Double
+    var pounds: Double
+    var stonepounds: Double
 
-    init(Kg: Double, Grams: Double, Ounces: Double, Pounds: Double, Stonepounds: Double) {
-        self.Kg = Kg
-        self.Grams = Grams
-        self.Ounces = Ounces
-        self.Pounds = Pounds
-        self.Stonepounds = Stonepounds
+    init(kg: Double, grams: Double, ounces: Double, pounds: Double, stonepounds: Double) {
+        self.kg = kg
+        self.grams = grams
+        self.ounces = ounces
+        self.pounds = pounds
+        self.stonepounds = stonepounds
     }
     
 }

@@ -21,18 +21,16 @@ class HelpAboutController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupUI()
-    }
-    
-    private func setupUI(){
+        self.headerImageView.image = UIImage(named: "SpeedHome")
         self.headerImageView.layer.masksToBounds = false
         self.headerImageView.layer.cornerRadius = 30
         self.headerImageView.clipsToBounds = true
-        
         self.primaryTextArea.text = "\u{2022} \(NSLocalizedString("SpeedHelpTextSectionA", comment: ""))"
         self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
     }
     
+    
+
     @IBAction func headerNavBar(_ sender: Any) {
         
         if(headerNavBarSegementController.selectedSegmentIndex == 0)
