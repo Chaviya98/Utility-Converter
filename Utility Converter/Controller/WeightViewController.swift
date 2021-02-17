@@ -187,18 +187,13 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
-        var alert : UIAlertController?
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: "weight", value: creatingHistoryData())
-            alert = UIAlertController(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: nil, preferredStyle: UIAlertController.Style.alert)
-            
+            displayAlert(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: "")
         } else {
-            alert = UIAlertController(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message:NSLocalizedString("FailAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("FailAlertMsgDescription", comment: ""))
         }
-        
-        alert!.addAction(UIAlertAction(title: NSLocalizedString("AlertOkButtonTitle", comment: ""), style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert!, animated: true, completion: nil)
     }
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
@@ -210,9 +205,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             destination.storageType = "weight"
             self.present(destination, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""), preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("AlertOkButtonTitle", comment: ""), style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            displayAlert(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
         }
     }
     

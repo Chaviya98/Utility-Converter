@@ -47,7 +47,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
             roundUpDecimalTextField.isHidden = false
             saveBtn.isHidden = false
         }
-    
+        
     }
     
     @IBAction func segementControllerValueChanged(_ sender: UISegmentedControl) {
