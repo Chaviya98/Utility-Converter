@@ -72,8 +72,8 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
         if (sender.text == ""){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
-            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
+            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
             
             switch SpeedUnits(rawValue: sender.tag)! {
             
@@ -121,9 +121,9 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: "speed", value: creatingHistoryData())
-            displayAlert(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: "")
+            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
-            displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
         }
     }
     
@@ -137,7 +137,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
             destination.storageType = "speed"
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlert(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
         }
     }
     

@@ -84,8 +84,8 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         if (sender.text == ""){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
-            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: ""))}
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
+            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: ""))}
             
             switch WeightUnits(rawValue: sender.tag)! {
             
@@ -190,9 +190,9 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: "weight", value: creatingHistoryData())
-            displayAlert(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: "")
+            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
-            displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
         }
     }
     
@@ -205,7 +205,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             destination.storageType = "weight"
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlert(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
         }
     }
     

@@ -86,11 +86,11 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
                 defaults.set(number, forKey: "roundup_decimalnumber")
                 dismiss(animated: true, completion: nil)
             } else {
-                displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("RoundUpDecimalMaxAmoutExceedMsgDescription", comment: ""))
+                displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("RoundUpDecimalMaxAmoutExceedMsgDescription", comment: ""))
             }
             
         }else{
-            displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("SettingChangedFailedMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("SettingChangedFailedMsgDescription", comment: ""))
         }
     }
     

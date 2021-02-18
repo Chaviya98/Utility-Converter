@@ -120,8 +120,8 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
         if (sender.text == ""){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: ""))}
-            guard let doubleTextFieldValue = Double(textFieldValue) else {  return displayAlert(title: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), message: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: ""))}
+            guard let doubleTextFieldValue = Double(textFieldValue) else {  return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
             
             switch fields(rawValue: sender.tag)! {
             
@@ -255,9 +255,9 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
         
         if(textField1.text != "" && textField2.text != "" && textField3.text != "" && textField4.text != "" && textField5.text != ""){
             DataManagementStore.saveDataToStore(key: "volume", value: creatingHistoryData())
-            displayAlert(title: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), message: "")
+            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
-            displayAlert(title: NSLocalizedString("FailAlertMsgTitle", comment: ""), message: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
         }
         
     }
@@ -271,7 +271,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
             destination.storageType = "volume"
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlert(title: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), message: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
         }
     }
     
