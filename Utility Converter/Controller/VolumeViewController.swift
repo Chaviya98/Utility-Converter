@@ -283,13 +283,13 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
                 "Liquid-Liter --> \(formatTextFieldValue(data: liquid.litre))\n" +
                 "Liquid-Uk Pint --> \(formatTextFieldValue(data: liquid.ukPint))\n" +
                 "Liquid-Fluid Ounce --> \(formatTextFieldValue(data: liquid.fluidOunce))\n" +
-                "Liquid-Mililitre --> \(formatTextFieldValue(data: liquid.millilitre))\n"
+                "Liquid-Mililitre --> \(formatTextFieldValue(data: liquid.millilitre))"
         } else{
             return "Cube-CubicCentimeters --> \(formatTextFieldValue(data: cube.cm))\n" +
                 "Cube-CubicMillimeters --> \(formatTextFieldValue(data: cube.mm))\n" +
                 "Cube-CubicMiles --> \(formatTextFieldValue(data: cube.mile))\n" +
                 "Cube-CubicKilometers --> \(formatTextFieldValue(data: cube.km))\n" +
-                "Cube-CubicMeters --> \(formatTextFieldValue(data: cube.metre))\n"
+                "Cube-CubicMeters --> \(formatTextFieldValue(data: cube.metre))"
         }
         
     }
