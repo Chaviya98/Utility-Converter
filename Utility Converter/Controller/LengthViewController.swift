@@ -216,7 +216,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(validationCheckForValues()){
-            DataManagementStore.saveDataToStore(key: "length", value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Length.PRIMARY_KEY, value: creatingHistoryData())
             displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
             displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
@@ -224,12 +224,12 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
-        let storage = DataManagementStore.getSavedDataFromStore(key: "length")
+        let storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Length.PRIMARY_KEY)
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
-            destination.storageType = "length"
+            destination.storageType = StoreKeys.Length.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
             displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
@@ -257,25 +257,25 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        defaults.set(textFieldCm.text, forKey: "length_centimeter")
-        defaults.set(textFieldMm.text, forKey: "length_millimeter")
-        defaults.set(textFieldMile.text, forKey: "length_mile")
-        defaults.set(textFieldKm.text, forKey: "length_kilometer")
-        defaults.set(textFieldMetre.text, forKey: "length_metre")
-        defaults.set(textFieldYard.text, forKey: "length_yard")
-        defaults.set(textFieldInch.text, forKey: "length_inch")
+        defaults.set(textFieldCm.text, forKey: StoreKeys.Length.PRESENT_VALUE_CENTIMETER)
+        defaults.set(textFieldMm.text, forKey:  StoreKeys.Length.PRESENT_VALUE_MILLIMETER)
+        defaults.set(textFieldMile.text, forKey:  StoreKeys.Length.PRESENT_VALUE_MILE)
+        defaults.set(textFieldKm.text, forKey:  StoreKeys.Length.PRESENT_VALUE_KILOMETER)
+        defaults.set(textFieldMetre.text, forKey:  StoreKeys.Length.PRESENT_VALUE_METRE)
+        defaults.set(textFieldYard.text, forKey:  StoreKeys.Length.PRESENT_VALUE_YARD)
+        defaults.set(textFieldInch.text, forKey:  StoreKeys.Length.PRESENT_VALUE_INCH)
         defaults.synchronize()
     }
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        textFieldCm.text = defaults.string(forKey: "length_centimeter")
-        textFieldMm.text = defaults.string(forKey: "length_millimeter")
-        textFieldMile.text = defaults.string(forKey: "length_mile")
-        textFieldKm.text = defaults.string(forKey: "length_kilometer")
-        textFieldMetre.text = defaults.string(forKey: "length_metre")
-        textFieldYard.text = defaults.string(forKey: "length_yard")
-        textFieldInch.text = defaults.string(forKey: "length_inch")
+        textFieldCm.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_CENTIMETER)
+        textFieldMm.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_MILLIMETER)
+        textFieldMile.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_MILE)
+        textFieldKm.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_KILOMETER)
+        textFieldMetre.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_METRE)
+        textFieldYard.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_YARD)
+        textFieldInch.text = defaults.string(forKey: StoreKeys.Length.PRESENT_VALUE_INCH)
     }
     
     // reseting text fields to default sate
@@ -303,6 +303,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
     }
 }

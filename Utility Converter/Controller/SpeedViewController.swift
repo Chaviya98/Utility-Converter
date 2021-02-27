@@ -120,7 +120,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(validationCheckForValues()){
-            DataManagementStore.saveDataToStore(key: "speed", value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Speed.PRIMARY_KEY, value: creatingHistoryData())
             displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
             displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
@@ -129,12 +129,12 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
-        let storage = DataManagementStore.getSavedDataFromStore(key: "speed")
+        let storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Speed.PRIMARY_KEY)
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
-            destination.storageType = "speed"
+            destination.storageType = StoreKeys.Speed.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
             displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
@@ -160,19 +160,19 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        defaults.set(textFieldMetresPerSec.text, forKey: "speed_metrespersec")
-        defaults.set(textFieldKmPerHour.text, forKey: "speed_kmperhour")
-        defaults.set(textFieldMilesPerHour.text, forKey: "speed_milesperhour")
-        defaults.set(textFieldKnotsPerHour.text, forKey: "speed_knotsperhour")
+        defaults.set(textFieldMetresPerSec.text, forKey: StoreKeys.Speed.PRESENT_VALUE_METRE_PER_SEC)
+        defaults.set(textFieldKmPerHour.text, forKey: StoreKeys.Speed.PRESENT_VALUE_KILOMETERS_PER_HOUR)
+        defaults.set(textFieldMilesPerHour.text, forKey: StoreKeys.Speed.PRESENT_VALUE_MILES_PER_HOUR)
+        defaults.set(textFieldKnotsPerHour.text, forKey: StoreKeys.Speed.PRESENT_VALUE_KNOTS_PER_HOUR)
         defaults.synchronize()
     }
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        textFieldMetresPerSec.text = defaults.string(forKey: "speed_metrespersec")
-        textFieldKmPerHour.text = defaults.string(forKey: "speed_kmperhour")
-        textFieldMilesPerHour.text = defaults.string(forKey: "speed_milesperhour")
-        textFieldKnotsPerHour.text = defaults.string(forKey: "speed_knotsperhour")
+        textFieldMetresPerSec.text = defaults.string(forKey: StoreKeys.Speed.PRESENT_VALUE_METRE_PER_SEC)
+        textFieldKmPerHour.text = defaults.string(forKey: StoreKeys.Speed.PRESENT_VALUE_KILOMETERS_PER_HOUR)
+        textFieldMilesPerHour.text = defaults.string(forKey: StoreKeys.Speed.PRESENT_VALUE_MILES_PER_HOUR)
+        textFieldKnotsPerHour.text = defaults.string(forKey: StoreKeys.Speed.PRESENT_VALUE_KNOTS_PER_HOUR)
     }
     
     // reseting text fields to default sate
@@ -201,6 +201,6 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
     }
 }

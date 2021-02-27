@@ -24,6 +24,7 @@
 		4E27C88125D7CE5F003257F4 /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */; };
 		4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88925D7D1D1003257F4 /* Temperature.swift */; };
 		4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */; };
+		4E67511925EA1DA0008488C5 /* StoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67511825EA1DA0008488C5 /* StoreKeys.swift */; };
 		4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */; };
 		4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */; };
 		4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5C25D3B6AC00A73E77 /* ViewController.swift */; };
@@ -75,6 +76,7 @@
 		4E27C88025D7CE5F003257F4 /* CustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		4E27C88925D7D1D1003257F4 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		4E67511825EA1DA0008488C5 /* StoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKeys.swift; sourceTree = "<group>"; };
 		4E731F5525D3B6AC00A73E77 /* Utility Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utility Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4E67511725EA1D6A008488C5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4E67511825EA1DA0008488C5 /* StoreKeys.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		4E731F4C25D3B6AC00A73E77 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 		4E731F5725D3B6AC00A73E77 /* Utility Converter */ = {
 			isa = PBXGroup;
 			children = (
+				4E67511725EA1D6A008488C5 /* Helper */,
 				4E27C88825D7D1C6003257F4 /* Model */,
 				4E731F9925D3DF8500A73E77 /* Controller */,
 				4E731F9525D3D8BE00A73E77 /* Common */,
@@ -390,6 +401,7 @@
 				4E13594125D9780C000AD7B8 /* Double+RoundToDecimal.swift in Sources */,
 				4E13592525D92814000AD7B8 /* HistoryTableCell.swift in Sources */,
 				4E13594E25DC2BE7000AD7B8 /* Liquid.swift in Sources */,
+				4E67511925EA1DA0008488C5 /* StoreKeys.swift in Sources */,
 				4E1358C025D830A6000AD7B8 /* Length.swift in Sources */,
 				4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */,
 				4E731F9B25D3DFFB00A73E77 /* HelpAboutController.swift in Sources */,

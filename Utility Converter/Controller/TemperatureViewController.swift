@@ -105,7 +105,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         if(textFieldFahrenheit.text != "" && textFieldCelsius.text != "" && textFieldKelvin.text != ""){
-            DataManagementStore.saveDataToStore(key: "temperature", value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Temperature.PRIMARY_KEY, value: creatingHistoryData())
             displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
             displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
@@ -115,12 +115,12 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
         
-        let storage = DataManagementStore.getSavedDataFromStore(key: "temperature")
+        let storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Temperature.PRIMARY_KEY)
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
-            destination.storageType = "temperature"
+            destination.storageType = StoreKeys.Temperature.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
             displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
@@ -136,17 +136,17 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        defaults.set(textFieldFahrenheit.text, forKey: "temperature_fahrenheit")
-        defaults.set(textFieldCelsius.text, forKey: "temperature_celsius")
-        defaults.set(textFieldKelvin.text, forKey: "temperature_kelvin")
+        defaults.set(textFieldFahrenheit.text, forKey: StoreKeys.Temperature.PRESENT_VALUE_FAHRENHEIT)
+        defaults.set(textFieldCelsius.text, forKey: StoreKeys.Temperature.PRESENT_VALUE_CELSIUS)
+        defaults.set(textFieldKelvin.text, forKey: StoreKeys.Temperature.PRESENT_VALUE_KELVIN)
         defaults.synchronize()
     }
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        textFieldFahrenheit.text = defaults.string(forKey: "temperature_fahrenheit")
-        textFieldCelsius.text = defaults.string(forKey: "temperature_celsius")
-        textFieldKelvin.text = defaults.string(forKey: "temperature_kelvin")
+        textFieldFahrenheit.text = defaults.string(forKey: StoreKeys.Temperature.PRESENT_VALUE_FAHRENHEIT)
+        textFieldCelsius.text = defaults.string(forKey: StoreKeys.Temperature.PRESENT_VALUE_CELSIUS)
+        textFieldKelvin.text = defaults.string(forKey: StoreKeys.Temperature.PRESENT_VALUE_KELVIN)
         
     }
     
@@ -166,7 +166,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
     }
     
 }

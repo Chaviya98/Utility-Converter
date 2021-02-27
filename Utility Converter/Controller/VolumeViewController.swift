@@ -254,7 +254,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(textField1.text != "" && textField2.text != "" && textField3.text != "" && textField4.text != "" && textField5.text != ""){
-            DataManagementStore.saveDataToStore(key: "volume", value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Volume.PRIMARY_KEY, value: creatingHistoryData())
             displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
             displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
@@ -263,12 +263,12 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
-        let storage = DataManagementStore.getSavedDataFromStore(key: "volume")
+        let storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Volume.PRIMARY_KEY)
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
-            destination.storageType = "volume"
+            destination.storageType = StoreKeys.Volume.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
             displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
@@ -297,17 +297,17 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
         if(optionSegementController.selectedSegmentIndex == 0){
-            defaults.set(textField1.text, forKey: "volume_textField1_liquid")
-            defaults.set(textField2.text, forKey: "volume_textField2_liquid")
-            defaults.set(textField3.text, forKey: "volume_textField3_liquid")
-            defaults.set(textField4.text, forKey: "volume_textField4_liquid")
-            defaults.set(textField5.text, forKey: "volume_textField5_liquid")
+            defaults.set(textField1.text, forKey: StoreKeys.Volume.PRESENT_VALUE_UK_GALLON)
+            defaults.set(textField2.text, forKey: StoreKeys.Volume.PRESENT_VALUE_LITER)
+            defaults.set(textField3.text, forKey: StoreKeys.Volume.PRESENT_VALUE_UK_PINT)
+            defaults.set(textField4.text, forKey: StoreKeys.Volume.PRESENT_VALUE_FLUID_OUNCE)
+            defaults.set(textField5.text, forKey: StoreKeys.Volume.PRESENT_VALUE_MILIILITRE)
         }else{
-            defaults.set(textField1.text, forKey: "volume_textField1_cube")
-            defaults.set(textField2.text, forKey: "volume_textField2_cube")
-            defaults.set(textField3.text, forKey: "volume_textField3_cube")
-            defaults.set(textField4.text, forKey: "volume_textField4_cube")
-            defaults.set(textField5.text, forKey: "volume_textField5_cube")
+            defaults.set(textField1.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_CENTIMETERS)
+            defaults.set(textField2.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILIMETERS)
+            defaults.set(textField3.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILES)
+            defaults.set(textField4.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_KILOMETERS)
+            defaults.set(textField5.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_METRES)
         }
         defaults.synchronize()
     }
@@ -315,17 +315,17 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
         if(optionSegementController.selectedSegmentIndex == 0){
-            textField1.text = defaults.string(forKey: "volume_textField1_liquid")
-            textField2.text = defaults.string(forKey: "volume_textField2_liquid")
-            textField3.text = defaults.string(forKey: "volume_textField3_liquid")
-            textField4.text = defaults.string(forKey: "volume_textField4_liquid")
-            textField5.text = defaults.string(forKey: "volume_textField5_liquid")
+            textField1.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_UK_GALLON)
+            textField2.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_LITER)
+            textField3.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_UK_PINT)
+            textField4.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_FLUID_OUNCE)
+            textField5.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_MILIILITRE)
         } else {
-            textField1.text = defaults.string(forKey: "volume_textField1_cube")
-            textField2.text = defaults.string(forKey: "volume_textField2_cube")
-            textField3.text = defaults.string(forKey: "volume_textField3_cube")
-            textField4.text = defaults.string(forKey: "volume_textField4_cube")
-            textField5.text = defaults.string(forKey: "volume_textField5_cube")
+            textField1.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_CENTIMETERS)
+            textField2.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILIMETERS)
+            textField3.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILES)
+            textField4.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_KILOMETERS)
+            textField5.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_METRES)
         }
         
         
@@ -351,7 +351,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
     }
     
 }

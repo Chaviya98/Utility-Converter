@@ -189,7 +189,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(validationCheckForValues()){
-            DataManagementStore.saveDataToStore(key: "weight", value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Weight.PRIMARY_KEY, value: creatingHistoryData())
             displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
         } else {
             displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
@@ -197,12 +197,12 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
-        let storage = DataManagementStore.getSavedDataFromStore(key: "weight")
+        let storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Weight.PRIMARY_KEY)
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
-            destination.storageType = "weight"
+            destination.storageType = StoreKeys.Weight.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
             displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
@@ -230,23 +230,23 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
-        defaults.set(textFieldKg.text, forKey: "weight_kg")
-        defaults.set(textFieldGram.text, forKey: "weight_grams")
-        defaults.set(textFieldOunce.text, forKey: "weight_ounce")
-        defaults.set(textFieldPound.text, forKey: "weight_pound")
-        defaults.set(textFieldStone.text, forKey: "weight_stone")
-        defaults.set(textFieldStonePounds.text, forKey: "weight_stonepounds")
+        defaults.set(textFieldKg.text, forKey: StoreKeys.Weight.PRESENT_VALUE_KILOGRAMS)
+        defaults.set(textFieldGram.text, forKey: StoreKeys.Weight.PRESENT_VALUE_GRAMS)
+        defaults.set(textFieldOunce.text, forKey: StoreKeys.Weight.PRESENT_VALUE_OUNCE)
+        defaults.set(textFieldPound.text, forKey: StoreKeys.Weight.PRESENT_VALUE_POUND)
+        defaults.set(textFieldStone.text, forKey: StoreKeys.Weight.PRESENT_VALUE_STONE)
+        defaults.set(textFieldStonePounds.text, forKey: StoreKeys.Weight.PRESENT_VALUE_STONEPOUNDS)
         defaults.synchronize()
     }
     
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
-        textFieldKg.text = defaults.string(forKey: "weight_kg")
-        textFieldGram.text = defaults.string(forKey: "weight_grams")
-        textFieldOunce.text = defaults.string(forKey: "weight_ounce")
-        textFieldPound.text = defaults.string(forKey: "weight_pound")
-        textFieldStone.text = defaults.string(forKey: "weight_stone")
-        textFieldStonePounds.text = defaults.string(forKey: "weight_stonepounds")
+        textFieldKg.text = defaults.string(forKey: StoreKeys.Weight.PRESENT_VALUE_KILOGRAMS)
+        textFieldGram.text = defaults.string(forKey: StoreKeys.Weight.PRESENT_VALUE_GRAMS)
+        textFieldOunce.text = defaults.string(forKey: StoreKeys.Weight.PRESENT_VALUE_OUNCE)
+        textFieldPound.text = defaults.string(forKey: StoreKeys.Weight.PRESENT_VALUE_POUND)
+        textFieldStone.text = defaults.string(forKey: StoreKeys.Weight.PRESENT_VALUE_STONE)
+        textFieldStonePounds.text = defaults.string(forKey: StoreKeys.Weight.PRESENT_VALUE_STONEPOUNDS)
         
     }
     
@@ -272,7 +272,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: "roundup_decimalnumber")))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
     }
     
 }
