@@ -30,8 +30,8 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
     
-    var liquid : Liquid = Liquid(ukGallon: 0.0, litre: 0.0, ukPint: 0.0, fluidOunce: 0.0, millilitre: 0.0)
-    var cube : Cube = Cube(cm: 0.0, mm: 0.0, mile: 0.0, km: 0.0, metre: 0.0)
+    var liquid : Liquid = Liquid()
+    var cube : Cube = Cube()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {

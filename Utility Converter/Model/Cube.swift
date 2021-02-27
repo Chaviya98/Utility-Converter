@@ -12,6 +12,14 @@ class Cube {
     var mile: Double
     var km: Double
     var metre: Double
+    
+    init() {
+        self.cm = 0.0
+        self.mm = 0.0
+        self.mile = 0.0
+        self.km = 0.0
+        self.metre = 0.0
+    }
 
     init(cm: Double, mm: Double, mile: Double, km: Double, metre: Double) {
         self.cm = cm

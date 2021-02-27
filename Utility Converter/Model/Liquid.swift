@@ -14,6 +14,14 @@ class Liquid {
     var fluidOunce: Double
     var millilitre: Double
     
+    init() {
+        self.ukGallon = 0.0
+        self.litre = 0.0
+        self.ukPint = 0.0
+        self.fluidOunce = 0.0
+        self.millilitre = 0.0
+    }
+    
     init(ukGallon: Double, litre:Double, ukPint:Double, fluidOunce:Double,millilitre:Double ) {
         self.ukGallon = ukGallon
         self.litre = litre

@@ -14,6 +14,14 @@ class Weight {
     var pounds: Double
     var stonepounds: Double
 
+    init() {
+        self.kg = 0.0
+        self.grams = 0.0
+        self.ounces = 0.0
+        self.pounds = 0.0
+        self.stonepounds = 0.0
+    }
+    
     init(kg: Double, grams: Double, ounces: Double, pounds: Double, stonepounds: Double) {
         self.kg = kg
         self.grams = grams

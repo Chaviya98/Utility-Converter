@@ -19,7 +19,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldKelvin: UITextField!
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
-    var temperature : Temperature = Temperature(farenheit: 0.0, celsius: 0.0, kelvin: 0.0)
+    var temperature : Temperature = Temperature()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -129,9 +129,9 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // creating histroy data
     func creatingHistoryData() -> String{
-        return "Fahrenheit --> \(formatTextFieldValue(data: temperature.farenheit))\n" +
-            "Celsius --> \(formatTextFieldValue(data: temperature.celsius))\n" +
-            "Kelvin --> \(formatTextFieldValue(data: temperature.kelvin))"
+        return "\(NSLocalizedString("TemperatureHistoryTitleForFahrenheit", comment: ""))\(formatTextFieldValue(data: temperature.farenheit))\n" +
+            "\(NSLocalizedString("TemperatureHistoryTitleForCelsius", comment: ""))\(formatTextFieldValue(data: temperature.celsius))\n" +
+            "\(NSLocalizedString("TemperatureHistoryTitleForKelvin", comment: ""))\(formatTextFieldValue(data: temperature.kelvin))"
     }
     
     // saving available data in the text fields when app closing

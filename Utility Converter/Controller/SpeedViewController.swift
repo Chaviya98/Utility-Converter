@@ -22,7 +22,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldKnotsPerHour: UITextField!
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
-    var speed : Speed = Speed(metresPerSec: 0.0, kmPerHour: 0.0, milesPerHour: 0.0, knotsPerHour: 0.0)
+    var speed : Speed = Speed()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -152,10 +152,10 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     }
     // creating histroy data
     func creatingHistoryData() -> String{
-        return "MetersPerSecond --> \(formatTextFieldValue(data: speed.milesPerHour))\n" +
-            "KilometersPerHour --> \(formatTextFieldValue(data: speed.kmPerHour))\n" +
-            "MilesPerHour --> \(formatTextFieldValue(data: speed.milesPerHour))\n" +
-            "Knots --> \(formatTextFieldValue(data: speed.knotsPerHour))"
+        return "\(NSLocalizedString("SpeedHistoryTitleForMetersPerSecond", comment: ""))\(formatTextFieldValue(data: speed.milesPerHour))\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForKilometersPerHour", comment: ""))\(formatTextFieldValue(data: speed.kmPerHour))\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForMilesPerHour", comment: ""))\(formatTextFieldValue(data: speed.milesPerHour))\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForKnots", comment: ""))\(formatTextFieldValue(data: speed.knotsPerHour))"
     }
     
     // saving available data in the text fields when app closing

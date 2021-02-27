@@ -13,3 +13,28 @@
 "VolumeHelpTextSectionA" =  "Utility Converter App supports volume convention such as UK gallon, litre, UK pint, fluid ounce, millilitre.";
 "WeightHelpTextSectionA" =  "Utility Converter App supports weight conventions such as Kg, grams, ounces, pounds, stone-pounds.";
 "SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing.";
+
+"TemperatureHistoryTitleForFahrenheit" = "Fahrenheit --> ";
+"TemperatureHistoryTitleForCelsius" = "Celsius --> ";
+"TemperatureHistoryTitleForKelvin" = "Kelvin --> ";
+
+"LengthHistoryTitleForCentimeters" = "Centimeters --> ";
+"LengthHistoryTitleForMillimeters" = "Millimeters --> ";
+"LengthHistoryTitleForMiles" = "Miles --> ";
+"LengthHistoryTitleForKilometers" = "Kilometers --> ";
+"LengthHistoryTitleForMeters" = "Meters --> ";
+"LengthHistoryTitleForYards" = "Yards --> ";
+"LengthHistoryTitleForInches" = "Inches --> ";
+
+"SpeedHistoryTitleForMetersPerSecond" = "MetersPerSecond --> ";
+"SpeedHistoryTitleForKilometersPerHour" = "KilometersPerHour --> ";
+"SpeedHistoryTitleForMilesPerHour" = "MilesPerHour --> ";
+"SpeedHistoryTitleForKnots" = "Knots --> ";
+
+"WeightHistoryTitleForKG" = "KG --> ";
+"WeightHistoryTitleForGrams" = "KilometersPerHour --> ";
+"WeightHistoryTitleForOunces" = "Ounces-> ";
+"WeightHistoryTitleForPounds" = "Pounds --> ";
+"WeightHistoryTitleForStonePounds" = "StonePounds --> ";
+
+

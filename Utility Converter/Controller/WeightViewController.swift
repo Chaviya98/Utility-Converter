@@ -21,7 +21,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldStonePounds: UITextField!
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
-    var weight : Weight = Weight(kg: 0.0, grams: 0.0, ounces: 0.0, pounds: 0.0, stonepounds: 0.0)
+    var weight : Weight = Weight()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -221,11 +221,11 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // creating histroy data
     func creatingHistoryData() -> String{
-        return "KG --> \(formatTextFieldValue(data: weight.kg))\n" +
-            "Grams --> \(formatTextFieldValue(data: weight.grams))\n" +
-            "Ounces-> \(formatTextFieldValue(data: weight.ounces))" +
-            "Pounds --> \(formatTextFieldValue(data: weight.pounds))\n" +
-            "StonePounds --> \(formatTextFieldValue(data: weight.stonepounds))"
+        return "\(NSLocalizedString("WeightHistoryTitleForKG", comment: ""))\(formatTextFieldValue(data: weight.kg))\n" +
+            "\(NSLocalizedString("WeightHistoryTitleForGrams", comment: ""))\(formatTextFieldValue(data: weight.grams))\n" +
+            "\(NSLocalizedString("WeightHistoryTitleForOunces", comment: ""))\(formatTextFieldValue(data: weight.ounces))" +
+            "\(NSLocalizedString("WeightHistoryTitleForPounds", comment: ""))\(formatTextFieldValue(data: weight.pounds))\n" +
+            "\(NSLocalizedString("WeightHistoryTitleForStonePounds", comment: ""))\(formatTextFieldValue(data: weight.stonepounds))"
     }
     
     // saving available data in the text fields when app closing

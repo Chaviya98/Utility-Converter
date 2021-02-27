@@ -23,7 +23,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var textFieldInch: UITextField!
     @IBOutlet weak var customKeyboard: CustomKeyboard!
     
-    var length : Length = Length(cm: 0.0, mm: 0.0, mile: 0.0, km: 0.0, metre: 0.0, yard: 0.0, inch: 0.0)
+    var length : Length = Length()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -246,13 +246,13 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     }
     // creating histroy data
     func creatingHistoryData() -> String{
-        return "Centimeters --> \(formatTextFieldValue(data: length.cm))\n" +
-            "Millimeters --> \(formatTextFieldValue(data: length.mm))\n" +
-            "Miles --> \(formatTextFieldValue(data: length.mile))\n" +
-            "Kilometers --> \(formatTextFieldValue(data: length.km))\n" +
-            "Meters --> \(formatTextFieldValue(data: length.metre))\n" +
-            "Yards --> \(formatTextFieldValue(data: length.yard))\n" +
-            "Inches --> \(formatTextFieldValue(data: length.inch))"
+        return "\(NSLocalizedString("LengthHistoryTitleForCentimeters", comment: ""))\(formatTextFieldValue(data: length.cm))\n" +
+            "\(NSLocalizedString("LengthHistoryTitleForMillimeters", comment: ""))\(formatTextFieldValue(data: length.mm))\n" +
+            "\(NSLocalizedString("LengthHistoryTitleForMiles", comment: ""))\(formatTextFieldValue(data: length.mile))\n" +
+            "\(NSLocalizedString("LengthHistoryTitleForKilometers", comment: ""))\(formatTextFieldValue(data: length.km))\n" +
+            "\(NSLocalizedString("LengthHistoryTitleForMeters", comment: ""))\(formatTextFieldValue(data: length.metre))\n" +
+            "\(NSLocalizedString("LengthHistoryTitleForYards", comment: ""))\(formatTextFieldValue(data: length.yard))\n" +
+            "\(NSLocalizedString("LengthHistoryTitleForInches", comment: ""))\(formatTextFieldValue(data: length.inch))"
     }
     
     // saving available data in the text fields when app closing

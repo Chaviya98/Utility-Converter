@@ -12,6 +12,12 @@ class Temperature {
     var celsius : Double
     var kelvin : Double
     
+    init() {
+        self.farenheit = 0.0
+        self.celsius = 0.0
+        self.kelvin = 0.0
+    }
+    
     init(farenheit: Double, celsius: Double,  kelvin: Double) {
         self.farenheit = farenheit
         self.celsius = celsius
