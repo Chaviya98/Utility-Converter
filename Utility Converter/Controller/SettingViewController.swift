@@ -37,13 +37,13 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         roundUpDecimalTextField.layer.cornerRadius = 10
         settingDescription.text = NSLocalizedString("SettingDescription", comment: "")
         
-        if(defaults.integer(forKey: "roundup_decimalnumber") < 5) {
-            roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: "roundup_decimalnumber") - 2
+        if(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY) < 5) {
+            roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY) - 2
             roundUpDecimalTextField.isHidden = true
             saveBtn.isHidden = true
         } else {
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 3
-            roundUpDecimalTextField.text = String(defaults.integer(forKey: "roundup_decimalnumber"))
+            roundUpDecimalTextField.text = String(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY))
             roundUpDecimalTextField.isHidden = false
             saveBtn.isHidden = false
         }
@@ -54,43 +54,41 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         
         if(roundUpDecimalNumberSegementController.selectedSegmentIndex == 0)
         {
-            defaults.set(2, forKey: "roundup_decimalnumber")
-            roundUpDecimalNumberSegementController.selectedSegmentIndex = 0
-            roundUpDecimalTextField.isHidden = true
-            saveBtn.isHidden = true
+            setupDecimalRoundupNumber(index: roundUpDecimalNumberSegementController.selectedSegmentIndex,value: 2)
+            
         }
         else if(roundUpDecimalNumberSegementController.selectedSegmentIndex == 1)
         {
-            defaults.set(3, forKey: "roundup_decimalnumber")
-            roundUpDecimalNumberSegementController.selectedSegmentIndex = 1
-            roundUpDecimalTextField.isHidden = true
-            saveBtn.isHidden = true
+            setupDecimalRoundupNumber(index: roundUpDecimalNumberSegementController.selectedSegmentIndex,value: 3)
         }else if (roundUpDecimalNumberSegementController.selectedSegmentIndex == 2)
         {
-            defaults.set(4, forKey: "roundup_decimalnumber")
-            roundUpDecimalNumberSegementController.selectedSegmentIndex = 2
-            roundUpDecimalTextField.isHidden = true
-            saveBtn.isHidden = true
+            setupDecimalRoundupNumber(index: roundUpDecimalNumberSegementController.selectedSegmentIndex,value: 4)
         } else{
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 4
             roundUpDecimalTextField.isHidden = false
             saveBtn.isHidden = false
-            roundUpDecimalTextField.text = String(defaults.integer(forKey: "roundup_decimalnumber"))
+            roundUpDecimalTextField.text = String(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY))
         }
     }
     
+    private func setupDecimalRoundupNumber(index:Int, value:Int) {
+        defaults.set(value, forKey: StoreKeys.DECIMAL_VALUE_KEY)
+        roundUpDecimalNumberSegementController.selectedSegmentIndex = index
+        roundUpDecimalTextField.isHidden = true
+        saveBtn.isHidden = true
+    }
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         if let number = Int(roundUpDecimalTextField.text!) {
-            if (number < Int(NSLocalizedString("RoundUpDecimalMaxAmout", comment: "")) ?? 5) {
-                defaults.set(number, forKey: "roundup_decimalnumber")
+            if (number < Constants.MAX_DECIMAL_ROUND_UP_NUMBER) {
+                defaults.set(number, forKey: StoreKeys.DECIMAL_VALUE_KEY)
                 dismiss(animated: true, completion: nil)
             } else {
-                displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("RoundUpDecimalMaxAmoutExceedMsgDescription", comment: ""))
+                displayAlertView(alertTitle: Alerts.InvalidDecimalRoundUpNumber.TITLE, alertDescription: Alerts.InvalidDecimalRoundUpNumber.MESSAGE)
             }
             
         }else{
-            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("SettingChangedFailedMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.InvalidDecimalRoundUpNumber.TITLE, alertDescription: Alerts.InvalidDecimalRoundUpNumber.MESSAGE)
         }
     }
     

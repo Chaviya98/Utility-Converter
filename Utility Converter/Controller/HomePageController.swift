@@ -128,6 +128,6 @@ class HomeController: UIViewController {
     
     private func settingUpTheRoundUpDecimalNumber(){
         let defaults = UserDefaults.standard
-        defaults.set(2, forKey: "roundup_decimalnumber")
+        defaults.set(Constants.DEFAULT_DECIMAL_ROUND_UP_NUMBER, forKey: StoreKeys.DECIMAL_VALUE_KEY)
     }
 }

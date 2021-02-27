@@ -25,6 +25,8 @@
 		4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88925D7D1D1003257F4 /* Temperature.swift */; };
 		4E27C88F25D7E42B003257F4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */; };
 		4E67511925EA1DA0008488C5 /* StoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67511825EA1DA0008488C5 /* StoreKeys.swift */; };
+		4E67512725EA3679008488C5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67512625EA3679008488C5 /* Alerts.swift */; };
+		4E67512F25EA3875008488C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67512E25EA3875008488C5 /* Constants.swift */; };
 		4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */; };
 		4E731F5B25D3B6AC00A73E77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */; };
 		4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E731F5C25D3B6AC00A73E77 /* ViewController.swift */; };
@@ -77,6 +79,8 @@
 		4E27C88925D7D1D1003257F4 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		4E27C88E25D7E42B003257F4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		4E67511825EA1DA0008488C5 /* StoreKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKeys.swift; sourceTree = "<group>"; };
+		4E67512625EA3679008488C5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		4E67512E25EA3875008488C5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E731F5525D3B6AC00A73E77 /* Utility Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utility Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E731F5825D3B6AC00A73E77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E731F5A25D3B6AC00A73E77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				4E67511825EA1DA0008488C5 /* StoreKeys.swift */,
+				4E67512625EA3679008488C5 /* Alerts.swift */,
+				4E67512E25EA3875008488C5 /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 				4E1358DF25D8D0F2000AD7B8 /* SpeedViewController.swift in Sources */,
 				4E731F5D25D3B6AC00A73E77 /* ViewController.swift in Sources */,
 				4E13591A25D92462000AD7B8 /* UIViewcontroller+DisplayAlert.swift in Sources */,
+				4E67512725EA3679008488C5 /* Alerts.swift in Sources */,
 				4E731F6325D3B6AC00A73E77 /* Utility_Converter.xcdatamodeld in Sources */,
 				4E731F5925D3B6AC00A73E77 /* AppDelegate.swift in Sources */,
 				4E13594125D9780C000AD7B8 /* Double+RoundToDecimal.swift in Sources */,
@@ -413,6 +420,7 @@
 				4E27C88A25D7D1D1003257F4 /* Temperature.swift in Sources */,
 				4E731FB325D3FB7000A73E77 /* HomePageController.swift in Sources */,
 				4E1358EF25D8E91B000AD7B8 /* Weight.swift in Sources */,
+				4E67512F25EA3875008488C5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

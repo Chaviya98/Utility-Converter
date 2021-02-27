@@ -17,7 +17,7 @@ class DataManagementStore: NSObject {
             store = UserDefaults.standard.object(forKey: key) as! [String]
             
             //to remove the last entity if the key has 5 data fields
-            if(store.count == 5){
+            if(store.count == Constants.MAX_HISTORY_COUNT){
                 store = Array(store.dropLast())
             }
             store = [value] + store

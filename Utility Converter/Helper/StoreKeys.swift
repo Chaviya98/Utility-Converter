@@ -9,9 +9,8 @@ import Foundation
 
 struct StoreKeys {
     
-    struct DecimalValue {
-        static let DECIMAL_VALUE_KEY = "roundup_decimalnumber"
-    }
+    static let DECIMAL_VALUE_KEY = "roundup_decimalnumber"
+    static let SEGEMENT_CONTROLLER_KEY_VOLUME = "volume_option"
     
     struct Weight {
         static let PRIMARY_KEY = "weight"

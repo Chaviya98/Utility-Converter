@@ -35,13 +35,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func extractCellImageName() -> String {
-        if(storageType == "temperature"){
+        if(storageType == StoreKeys.Temperature.PRIMARY_KEY){
             return "TemperatureHome"
-        } else if (storageType == "speed") {
+        } else if (storageType == StoreKeys.Speed.PRIMARY_KEY) {
             return "SpeedHome"
-        } else if (storageType == "length"){
+        } else if (storageType == StoreKeys.Length.PRIMARY_KEY){
             return "LengthHome"
-        } else if (storageType == "weight") {
+        } else if (storageType == StoreKeys.Weight.PRIMARY_KEY) {
             return "WeightHome"
         } else {
             return "VolumeHome"

@@ -12,18 +12,4 @@
 "TemperatureHelpTextSectionA" =  "Utility Converter App supports temperature conventions such as Celsius, Fahrenheit, Kelvin.";
 "VolumeHelpTextSectionA" =  "Utility Converter App supports volume convention such as UK gallon, litre, UK pint, fluid ounce, millilitre.";
 "WeightHelpTextSectionA" =  "Utility Converter App supports weight conventions such as Kg, grams, ounces, pounds, stone-pounds.";
-"SuccssfullAlertMsgTitle" = "Succssfully Saved !";
-"SuccssfullAlertMsgDescription" = "";
-"FailAlertMsgTitle" = "Save Failed !";
-"FailAlertMsgDescription" = "Please check the text fields and try again";
-"NoHistoryAlertMsgTitle" = "No History !";
-"NoHistoryAlertMsgDescription" = "No saved history found. Plase click save to add calculations to history.";
-"AlertOkButtonTitle" = "OK";
 "SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing.";
-"SettingChangedFailedMsgDescription" = "Please enter a digit value as the input.";
-"RoundUpDecimalMaxAmout" = "5";
-"RoundUpDecimalMaxAmoutExceedMsgDescription" = "Please enter a different value. The maximum value you can enter is 5.";
-"ConvertingFailMsgTitle" = "Converting Failed !";
-"ConvertingFailMsgDescriptionForInvalidInput" = "Please enter a digit value as the input.";
-"ConvertingFailMsgDescriptionForCommonUse" = "Something went wrong. Please try again later.";
-

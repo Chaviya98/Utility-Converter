@@ -81,11 +81,11 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         
         // validation check for empty text fields
         
-        if (sender.text == ""){
+        if (sender.text == Constants.DEFAULT_TEXT_FIELD_VALUE){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
-            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: ""))}
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: Alerts.CommonAlert.TITLE, alertDescription: Alerts.CommonAlert.MESSAGE) }
+            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: Alerts.InvalidParameters.TITLE, alertDescription: Alerts.InvalidParameters.MESSAGE) }
             
             switch WeightUnits(rawValue: sender.tag)! {
             
@@ -190,9 +190,9 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: StoreKeys.Weight.PRIMARY_KEY, value: creatingHistoryData())
-            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
+            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
-            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }
     }
     
@@ -205,14 +205,14 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             destination.storageType = StoreKeys.Weight.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
         }
     }
     
     
     // cheking whether all the fields are filled with data
     func validationCheckForValues() -> Bool {
-        if(textFieldKg.text != "" && textFieldGram.text != "" && textFieldOunce.text != "" && textFieldPound.text != "" && textFieldStone.text != ""){
+        if(textFieldKg.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldGram.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldOunce.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldPound.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldStone.text != Constants.DEFAULT_TEXT_FIELD_VALUE){
             return true
         } else{
             return false
@@ -252,12 +252,12 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // reseting text fields to default sate
     func resetTextFieldsToDefaultSate(){
-        textFieldKg.text = ""
-        textFieldGram.text = ""
-        textFieldOunce.text = ""
-        textFieldPound.text = ""
-        textFieldStone.text = ""
-        textFieldStonePounds.text = ""
+        textFieldKg.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldGram.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldOunce.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldPound.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldStone.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldStonePounds.text = Constants.DEFAULT_TEXT_FIELD_VALUE
         
     }
     // disabling the default keyboard
@@ -272,7 +272,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
     }
     
 }

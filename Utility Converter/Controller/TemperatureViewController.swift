@@ -64,11 +64,11 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     @IBAction func temperatureViewTextFieldValueChanged(_ sender: UITextField) {
         
         // validation check for empty text fields
-        if (sender.text == ""){
+        if (sender.text == Constants.DEFAULT_TEXT_FIELD_VALUE){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: ""))}
-            guard let doubleTextFieldValue = Double(textFieldValue) else {  return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: Alerts.CommonAlert.TITLE, alertDescription: Alerts.CommonAlert.MESSAGE)}
+            guard let doubleTextFieldValue = Double(textFieldValue) else {  return displayAlertView(alertTitle: Alerts.InvalidParameters.TITLE, alertDescription: Alerts.InvalidParameters.MESSAGE) }
             
             switch TemperatureUnits(rawValue: sender.tag)! {
             
@@ -104,11 +104,11 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
-        if(textFieldFahrenheit.text != "" && textFieldCelsius.text != "" && textFieldKelvin.text != ""){
+        if(textFieldFahrenheit.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldCelsius.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldKelvin.text != Constants.DEFAULT_TEXT_FIELD_VALUE){
             DataManagementStore.saveDataToStore(key: StoreKeys.Temperature.PRIMARY_KEY, value: creatingHistoryData())
-            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
+            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
-            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }
     }
     
@@ -123,7 +123,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
             destination.storageType = StoreKeys.Temperature.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
         }
     }
     
@@ -152,9 +152,9 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // reseting text fields to default sate
     func resetTextFieldsToDefaultSate(){
-        textFieldFahrenheit.text = ""
-        textFieldCelsius.text = ""
-        textFieldKelvin.text = ""
+        textFieldFahrenheit.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldCelsius.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldKelvin.text = Constants.DEFAULT_TEXT_FIELD_VALUE
     }
     
     // disabling the default keyboard
@@ -166,7 +166,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
     }
     
 }

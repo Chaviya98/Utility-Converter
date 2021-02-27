@@ -86,11 +86,11 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     @IBAction func lengthViewTextFieldValueChanged(_ sender: UITextField) {
         
         // validation check for empty text fields
-        if (sender.text == ""){
+        if (sender.text == Constants.DEFAULT_TEXT_FIELD_VALUE){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
-            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: ""))}
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: Alerts.CommonAlert.TITLE, alertDescription: Alerts.CommonAlert.MESSAGE) }
+            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: Alerts.InvalidParameters.TITLE, alertDescription: Alerts.InvalidParameters.MESSAGE)}
             
             switch LengthUnits(rawValue: sender.tag)! {
             
@@ -217,9 +217,9 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: StoreKeys.Length.PRIMARY_KEY, value: creatingHistoryData())
-            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
+            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
-            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }
     }
     
@@ -232,13 +232,13 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
             destination.storageType = StoreKeys.Length.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
         }
     }
     
     // cheking whether all the fields are filled with data 
     func validationCheckForValues() -> Bool {
-        if(textFieldCm.text != "" && textFieldMm.text != "" && textFieldMile.text != "" && textFieldKm.text != "" && textFieldMetre.text != "" && textFieldYard.text != "" && textFieldInch.text != "" ){
+        if(textFieldCm.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldMm.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldMile.text != "" && textFieldKm.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldMetre.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldYard.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldInch.text != Constants.DEFAULT_TEXT_FIELD_VALUE ){
             return true
         } else{
             return false
@@ -280,13 +280,13 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     // reseting text fields to default sate
     func resetTextFieldsToDefaultSate(){
-        textFieldMetre.text = ""
-        textFieldKm.text = ""
-        textFieldMile.text = ""
-        textFieldCm.text = ""
-        textFieldMm.text = ""
-        textFieldYard.text = ""
-        textFieldInch.text = ""
+        textFieldMetre.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldKm.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldMile.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldCm.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldMm.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldYard.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldInch.text = Constants.DEFAULT_TEXT_FIELD_VALUE
     }
     
     
@@ -303,6 +303,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
     }
 }

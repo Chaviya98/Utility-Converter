@@ -69,11 +69,11 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func speedViewTextFieldValueChanged(_ sender: UITextField) {
         // validation check for empty text fields
-        if (sender.text == ""){
+        if (sender.text == Constants.DEFAULT_TEXT_FIELD_VALUE){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: "")) }
-            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: Alerts.CommonAlert.TITLE, alertDescription: Alerts.CommonAlert.MESSAGE)}
+            guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: Alerts.InvalidParameters.TITLE, alertDescription: Alerts.InvalidParameters.MESSAGE) }
             
             switch SpeedUnits(rawValue: sender.tag)! {
             
@@ -121,9 +121,9 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: StoreKeys.Speed.PRIMARY_KEY, value: creatingHistoryData())
-            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
+            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
-            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }
     }
     
@@ -137,14 +137,14 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
             destination.storageType = StoreKeys.Speed.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
         }
     }
     
     
     // cheking whether all the fields are filled with data
     func validationCheckForValues() -> Bool {
-        if(textFieldMetresPerSec.text != "" && textFieldKmPerHour.text != "" && textFieldMilesPerHour.text != "" && textFieldKnotsPerHour.text != "" ){
+        if(textFieldMetresPerSec.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldKmPerHour.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldMilesPerHour.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldKnotsPerHour.text != Constants.DEFAULT_TEXT_FIELD_VALUE ){
             return true
         } else{
             return false
@@ -177,16 +177,10 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     // reseting text fields to default sate
     func resetTextFieldsToDefaultSate(){
-        textFieldMetresPerSec.text = ""
-        textFieldKmPerHour.text = ""
-        textFieldMilesPerHour.text = ""
-        textFieldKnotsPerHour.text = ""
-        
-        
-        textFieldMetresPerSec.placeholder = "0"
-        textFieldKmPerHour.placeholder = "0"
-        textFieldMilesPerHour.placeholder = "0"
-        textFieldKnotsPerHour.placeholder = "0"
+        textFieldMetresPerSec.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldKmPerHour.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldMilesPerHour.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textFieldKnotsPerHour.text = Constants.DEFAULT_TEXT_FIELD_VALUE
         
     }
     
@@ -201,6 +195,6 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
     }
 }

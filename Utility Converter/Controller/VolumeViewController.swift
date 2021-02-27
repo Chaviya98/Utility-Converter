@@ -86,9 +86,9 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     @IBAction func segementControllerValueChanged(_ sender: UISegmentedControl) {
         
         if(optionSegementController.selectedSegmentIndex == 0){
-            defaults.set(1, forKey: "volume_option")
+            defaults.set(1, forKey: StoreKeys.SEGEMENT_CONTROLLER_KEY_VOLUME)
         }else{
-            defaults.set(2, forKey: "volume_option")
+            defaults.set(2, forKey: StoreKeys.SEGEMENT_CONTROLLER_KEY_VOLUME)
         }
         resetTextFieldsToDefaultSate()
         textFieldLableValueChanger()
@@ -96,7 +96,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     }
     
     private func textFieldLableValueChanger(){
-        if(defaults.integer(forKey: "volume_option") == 1){
+        if(defaults.integer(forKey: StoreKeys.SEGEMENT_CONTROLLER_KEY_VOLUME) == 1){
             optionSegementController.selectedSegmentIndex = 0
             textField1Label.text = "Uk Gallon"
             textField2Label.text = "Litre"
@@ -117,11 +117,11 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     @IBAction func textFieldValueChanged(_ sender: UITextField) {
         
         // validation check for empty text fields
-        if (sender.text == ""){
+        if (sender.text == Constants.DEFAULT_TEXT_FIELD_VALUE){
             resetTextFieldsToDefaultSate()
         } else {
-            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForCommonUse", comment: ""))}
-            guard let doubleTextFieldValue = Double(textFieldValue) else {  return displayAlertView(alertTitle: NSLocalizedString("ConvertingFailMsgTitle", comment: ""), alertDescription: NSLocalizedString("ConvertingFailMsgDescriptionForInvalidInput", comment: "")) }
+            guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: Alerts.CommonAlert.TITLE, alertDescription: Alerts.CommonAlert.MESSAGE)}
+            guard let doubleTextFieldValue = Double(textFieldValue) else {  return displayAlertView(alertTitle: Alerts.InvalidParameters.TITLE, alertDescription: Alerts.InvalidParameters.MESSAGE) }
             
             switch fields(rawValue: sender.tag)! {
             
@@ -253,11 +253,11 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
-        if(textField1.text != "" && textField2.text != "" && textField3.text != "" && textField4.text != "" && textField5.text != ""){
+        if(textField1.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField2.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField3.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField4.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField5.text != Constants.DEFAULT_TEXT_FIELD_VALUE){
             DataManagementStore.saveDataToStore(key: StoreKeys.Volume.PRIMARY_KEY, value: creatingHistoryData())
-            displayAlertView(alertTitle: NSLocalizedString("SuccssfullAlertMsgTitle", comment: ""), alertDescription: "")
+            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
-            displayAlertView(alertTitle: NSLocalizedString("FailAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("FailAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }
         
     }
@@ -271,7 +271,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
             destination.storageType = StoreKeys.Volume.PRIMARY_KEY
             self.present(destination, animated: true, completion: nil)
         }else{
-            displayAlertView(alertTitle: NSLocalizedString("NoHistoryAlertMsgTitle", comment: ""), alertDescription: NSLocalizedString("NoHistoryAlertMsgDescription", comment: ""))
+            displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
         }
     }
     
@@ -333,11 +333,11 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     
     // reseting text fields to default sate
     func resetTextFieldsToDefaultSate(){
-        textField1.text = ""
-        textField2.text = ""
-        textField3.text = ""
-        textField4.text = ""
-        textField5.text = ""
+        textField1.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textField2.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textField3.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textField4.text = Constants.DEFAULT_TEXT_FIELD_VALUE
+        textField5.text = Constants.DEFAULT_TEXT_FIELD_VALUE
     }
     
     // disabling the default keyboard
@@ -351,7 +351,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     
     // formatting value into 2 decimal points
     func formatTextFieldValue(data : Double) -> String {
-        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DecimalValue.DECIMAL_VALUE_KEY)))
+        return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
     }
     
 }
