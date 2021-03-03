@@ -120,7 +120,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(validationCheckForValues()){
-            DataManagementStore.saveDataToStore(key: StoreKeys.Speed.PRIMARY_KEY, value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Speed.PRIMARY_KEY, value: speed.getSpeedData())
             displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
@@ -150,14 +150,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
-    // creating histroy data
-    func creatingHistoryData() -> String{
-        return "\(NSLocalizedString("SpeedHistoryTitleForMetersPerSecond", comment: ""))\(formatTextFieldValue(data: speed.milesPerHour))\n" +
-            "\(NSLocalizedString("SpeedHistoryTitleForKilometersPerHour", comment: ""))\(formatTextFieldValue(data: speed.kmPerHour))\n" +
-            "\(NSLocalizedString("SpeedHistoryTitleForMilesPerHour", comment: ""))\(formatTextFieldValue(data: speed.milesPerHour))\n" +
-            "\(NSLocalizedString("SpeedHistoryTitleForKnots", comment: ""))\(formatTextFieldValue(data: speed.knotsPerHour))"
-    }
-    
+
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
         defaults.set(textFieldMetresPerSec.text, forKey: StoreKeys.Speed.PRESENT_VALUE_METRE_PER_SEC)

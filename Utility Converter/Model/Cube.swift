@@ -29,4 +29,12 @@ class Cube {
         self.metre = metre
         
     }
+    // creating histroy data
+    func getCubeData() -> String {
+        return "Cube-CubicCentimeters --> \(self.cm)\n" +
+            "Cube-CubicMillimeters --> \(self.mm)\n" +
+            "Cube-CubicMiles --> \(self.mile)\n" +
+            "Cube-CubicKilometers --> \(self.km)\n" +
+            "Cube-CubicMeters --> \(self.metre)"
+    }
 }

@@ -189,7 +189,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(validationCheckForValues()){
-            DataManagementStore.saveDataToStore(key: StoreKeys.Weight.PRIMARY_KEY, value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Weight.PRIMARY_KEY, value: weight.getWeightData())
             displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
@@ -219,14 +219,6 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // creating histroy data
-    func creatingHistoryData() -> String{
-        return "\(NSLocalizedString("WeightHistoryTitleForKG", comment: ""))\(formatTextFieldValue(data: weight.kg))\n" +
-            "\(NSLocalizedString("WeightHistoryTitleForGrams", comment: ""))\(formatTextFieldValue(data: weight.grams))\n" +
-            "\(NSLocalizedString("WeightHistoryTitleForOunces", comment: ""))\(formatTextFieldValue(data: weight.ounces))" +
-            "\(NSLocalizedString("WeightHistoryTitleForPounds", comment: ""))\(formatTextFieldValue(data: weight.pounds))\n" +
-            "\(NSLocalizedString("WeightHistoryTitleForStonePounds", comment: ""))\(formatTextFieldValue(data: weight.stonepounds))"
-    }
     
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){

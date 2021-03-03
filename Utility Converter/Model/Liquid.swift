@@ -29,4 +29,13 @@ class Liquid {
         self.fluidOunce = fluidOunce
         self.millilitre = millilitre
     }
+    
+    // creating histroy data
+    func getLiquidData() -> String {
+        return "Liquid-UK Gallon --> \(self.ukGallon)\n" +
+            "Liquid-Liter --> \(self.litre)\n" +
+            "Liquid-Uk Pint --> \(self.ukPint)\n" +
+            "Liquid-Fluid Ounce --> \(self.fluidOunce)\n" +
+            "Liquid-Mililitre --> \(self.millilitre)"
+    }
 }

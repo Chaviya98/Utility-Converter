@@ -279,17 +279,9 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     func creatingHistoryData() -> String{
         
         if(optionSegementController.selectedSegmentIndex == 0){
-            return "Liquid-UK Gallon --> \(formatTextFieldValue(data: liquid.ukGallon))\n" +
-                "Liquid-Liter --> \(formatTextFieldValue(data: liquid.litre))\n" +
-                "Liquid-Uk Pint --> \(formatTextFieldValue(data: liquid.ukPint))\n" +
-                "Liquid-Fluid Ounce --> \(formatTextFieldValue(data: liquid.fluidOunce))\n" +
-                "Liquid-Mililitre --> \(formatTextFieldValue(data: liquid.millilitre))"
+            return liquid.getLiquidData()
         } else{
-            return "Cube-CubicCentimeters --> \(formatTextFieldValue(data: cube.cm))\n" +
-                "Cube-CubicMillimeters --> \(formatTextFieldValue(data: cube.mm))\n" +
-                "Cube-CubicMiles --> \(formatTextFieldValue(data: cube.mile))\n" +
-                "Cube-CubicKilometers --> \(formatTextFieldValue(data: cube.km))\n" +
-                "Cube-CubicMeters --> \(formatTextFieldValue(data: cube.metre))"
+            return cube.getCubeData()
         }
         
     }

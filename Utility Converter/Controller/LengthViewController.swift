@@ -216,7 +216,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(validationCheckForValues()){
-            DataManagementStore.saveDataToStore(key: StoreKeys.Length.PRIMARY_KEY, value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Length.PRIMARY_KEY, value: length.getLengthData())
             displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
@@ -243,16 +243,6 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
         } else{
             return false
         }
-    }
-    // creating histroy data
-    func creatingHistoryData() -> String{
-        return "\(NSLocalizedString("LengthHistoryTitleForCentimeters", comment: ""))\(formatTextFieldValue(data: length.cm))\n" +
-            "\(NSLocalizedString("LengthHistoryTitleForMillimeters", comment: ""))\(formatTextFieldValue(data: length.mm))\n" +
-            "\(NSLocalizedString("LengthHistoryTitleForMiles", comment: ""))\(formatTextFieldValue(data: length.mile))\n" +
-            "\(NSLocalizedString("LengthHistoryTitleForKilometers", comment: ""))\(formatTextFieldValue(data: length.km))\n" +
-            "\(NSLocalizedString("LengthHistoryTitleForMeters", comment: ""))\(formatTextFieldValue(data: length.metre))\n" +
-            "\(NSLocalizedString("LengthHistoryTitleForYards", comment: ""))\(formatTextFieldValue(data: length.yard))\n" +
-            "\(NSLocalizedString("LengthHistoryTitleForInches", comment: ""))\(formatTextFieldValue(data: length.inch))"
     }
     
     // saving available data in the text fields when app closing

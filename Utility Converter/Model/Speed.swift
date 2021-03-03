@@ -27,4 +27,12 @@ class Speed {
         self.knotsPerHour = knotsPerHour
     }
     
+    
+    // creating histroy data
+    func getSpeedData() -> String {
+        return "\(NSLocalizedString("SpeedHistoryTitleForMetersPerSecond", comment: ""))\(self.metresPerSec)\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForKilometersPerHour", comment: ""))\(self.kmPerHour)\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForMilesPerHour", comment: ""))\(self.milesPerHour)\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForKnots", comment: ""))\(self.knotsPerHour)"
+    }
 }

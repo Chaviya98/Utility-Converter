@@ -30,4 +30,13 @@ class Weight {
         self.stonepounds = stonepounds
     }
     
+    // creating histroy data
+    func getWeightData() -> String {
+        return "\(NSLocalizedString("WeightHistoryTitleForKG", comment: ""))\(self.kg))\n" +
+            "\(NSLocalizedString("WeightHistoryTitleForGrams", comment: ""))\(self.grams)\n" +
+            "\(NSLocalizedString("WeightHistoryTitleForOunces", comment: ""))\(self.ounces)" +
+            "\(NSLocalizedString("WeightHistoryTitleForPounds", comment: ""))\(self.pounds)\n" +
+            "\(NSLocalizedString("WeightHistoryTitleForStonePounds", comment: ""))\(self.stonepounds)"
+    }
+    
 }

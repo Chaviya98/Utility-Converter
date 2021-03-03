@@ -23,4 +23,11 @@ class Temperature {
         self.celsius = celsius
         self.kelvin = kelvin
     }
+    
+    // creating histroy data
+    func getTemperatureData() -> String {
+        return "\(NSLocalizedString("TemperatureHistoryTitleForFahrenheit", comment: ""))\(self.farenheit)\n" +
+            "\(NSLocalizedString("TemperatureHistoryTitleForCelsius", comment: ""))\(self.celsius)\n" +
+            "\(NSLocalizedString("TemperatureHistoryTitleForKelvin", comment: ""))\(self.kelvin)"
+    }
 }

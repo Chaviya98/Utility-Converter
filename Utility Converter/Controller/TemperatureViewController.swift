@@ -105,7 +105,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         if(textFieldFahrenheit.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldCelsius.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldKelvin.text != Constants.DEFAULT_TEXT_FIELD_VALUE){
-            DataManagementStore.saveDataToStore(key: StoreKeys.Temperature.PRIMARY_KEY, value: creatingHistoryData())
+            DataManagementStore.saveDataToStore(key: StoreKeys.Temperature.PRIMARY_KEY, value: temperature.getTemperatureData())
             displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
@@ -125,13 +125,6 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
         }else{
             displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
         }
-    }
-    
-    // creating histroy data
-    func creatingHistoryData() -> String{
-        return "\(NSLocalizedString("TemperatureHistoryTitleForFahrenheit", comment: ""))\(formatTextFieldValue(data: temperature.farenheit))\n" +
-            "\(NSLocalizedString("TemperatureHistoryTitleForCelsius", comment: ""))\(formatTextFieldValue(data: temperature.celsius))\n" +
-            "\(NSLocalizedString("TemperatureHistoryTitleForKelvin", comment: ""))\(formatTextFieldValue(data: temperature.kelvin))"
     }
     
     // saving available data in the text fields when app closing
