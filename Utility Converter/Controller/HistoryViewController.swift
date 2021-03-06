@@ -81,7 +81,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else if (storageType == StoreKeys.Liquid.PRIMARY_KEY) {
             return "VolumeHome"
         } else if (storageType == StoreKeys.Cube.PRIMARY_KEY) {
-            return "VolumeHome"
+            return "CubeHome"
         } else {
             return ""
         }

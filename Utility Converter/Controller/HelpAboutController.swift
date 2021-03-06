@@ -56,6 +56,11 @@ class HelpAboutController: UIViewController {
             self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
         }else if(headerNavBarSegementController.selectedSegmentIndex == 4)
         {
+            headerImageView.image = UIImage(named: "CubeHome")
+            primaryTextArea.text = "\u{2022} \(NSLocalizedString("CubeHelpTextSectionA", comment: ""))"
+            self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
+        }else if(headerNavBarSegementController.selectedSegmentIndex == 5)
+        {
             headerImageView.image = UIImage(named: "WeightHome")
             primaryTextArea.text = "\u{2022} \(NSLocalizedString("WeightHelpTextSectionA", comment: ""))"
             self.secondaryTextArea.text = "\u{2022} \(NSLocalizedString("CommonHelpTextSectionB", comment: ""))"
