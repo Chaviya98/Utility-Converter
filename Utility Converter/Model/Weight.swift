@@ -32,7 +32,7 @@ class Weight :Unit {
     
     // creating histroy data
     func getWeightData() -> String {
-        return "\(NSLocalizedString("WeightHistoryTitleForKG", comment: ""))\(formatTextFieldValue(data: self.kg)))\n" +
+        return "\(NSLocalizedString("WeightHistoryTitleForKG", comment: ""))\(formatTextFieldValue(data: self.kg))\n" +
             "\(NSLocalizedString("WeightHistoryTitleForGrams", comment: ""))\(formatTextFieldValue(data: self.grams))\n" +
             "\(NSLocalizedString("WeightHistoryTitleForOunces", comment: ""))\(formatTextFieldValue(data: self.ounces))" +
             "\(NSLocalizedString("WeightHistoryTitleForPounds", comment: ""))\(formatTextFieldValue(data: self.pounds))\n" +
