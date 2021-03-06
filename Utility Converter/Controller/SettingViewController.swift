@@ -41,11 +41,13 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
             roundUpDecimalNumberSegementController.selectedSegmentIndex = defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY) - 2
             roundUpDecimalTextField.isHidden = true
             saveBtn.isHidden = true
+            customKeyboard.isHidden = true
         } else {
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 3
             roundUpDecimalTextField.text = String(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY))
             roundUpDecimalTextField.isHidden = false
             saveBtn.isHidden = false
+            customKeyboard.isHidden = false
         }
         
     }
@@ -67,6 +69,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 4
             roundUpDecimalTextField.isHidden = false
             saveBtn.isHidden = false
+            customKeyboard.isHidden = false
             roundUpDecimalTextField.text = String(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY))
         }
     }
@@ -76,6 +79,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         roundUpDecimalNumberSegementController.selectedSegmentIndex = index
         roundUpDecimalTextField.isHidden = true
         saveBtn.isHidden = true
+        customKeyboard.isHidden = true
     }
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {

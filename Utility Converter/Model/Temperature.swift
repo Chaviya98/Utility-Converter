@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Temperature {
+class Temperature: Unit {
     var farenheit : Double
     var celsius : Double
     var kelvin : Double
     
-    init() {
+    override init() {
         self.farenheit = 0.0
         self.celsius = 0.0
         self.kelvin = 0.0
@@ -26,8 +26,8 @@ class Temperature {
     
     // creating histroy data
     func getTemperatureData() -> String {
-        return "\(NSLocalizedString("TemperatureHistoryTitleForFahrenheit", comment: ""))\(self.farenheit)\n" +
-            "\(NSLocalizedString("TemperatureHistoryTitleForCelsius", comment: ""))\(self.celsius)\n" +
-            "\(NSLocalizedString("TemperatureHistoryTitleForKelvin", comment: ""))\(self.kelvin)"
+        return "\(NSLocalizedString("TemperatureHistoryTitleForFahrenheit", comment: ""))\(formatTextFieldValue(data: self.farenheit))\n" +
+            "\(NSLocalizedString("TemperatureHistoryTitleForCelsius", comment: ""))\(formatTextFieldValue(data: self.celsius))\n" +
+            "\(NSLocalizedString("TemperatureHistoryTitleForKelvin", comment: ""))\(formatTextFieldValue(data: self.kelvin))"
     }
 }

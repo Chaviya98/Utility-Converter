@@ -49,14 +49,17 @@ struct StoreKeys {
         static let PRESENT_VALUE_KELVIN = "temperature_kelvin"
     }
 
-    struct Volume {
-        static let PRIMARY_KEY = "volume"
+    struct Liquid {
+        static let PRIMARY_KEY = "liquid"
         static let PRESENT_VALUE_UK_GALLON = "liquid_ukgallon"
         static let PRESENT_VALUE_LITER = "liquid_liter"
         static let PRESENT_VALUE_UK_PINT = "liquid_ukpint"
         static let PRESENT_VALUE_FLUID_OUNCE = "liquid_fluidounce"
         static let PRESENT_VALUE_MILIILITRE = "liquid_mililitre"
-        
+    }
+    
+    struct Cube {
+        static let PRIMARY_KEY = "cube"        
         static let PRESENT_VALUE_CUBIC_CENTIMETERS = "cube_centimeters"
         static let PRESENT_VALUE_CUBIC_MILIMETERS = "cube_milimeters"
         static let PRESENT_VALUE_CUBIC_MILES = "cube_miles"

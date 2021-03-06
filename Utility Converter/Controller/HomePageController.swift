@@ -121,7 +121,7 @@ class HomeController: UIViewController {
     }
     
     @IBAction func btnSettingPressed(_ sender: UIButton) {
-        self.nextViewIndexNumber = 0
+        self.nextViewIndexNumber = 1
         self.performSegue(withIdentifier: "tabBarSecondary", sender: self)
     }
     

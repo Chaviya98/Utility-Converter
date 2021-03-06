@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Speed {
+class Speed : Unit{
     var metresPerSec: Double
     var kmPerHour: Double
     var milesPerHour: Double
     var knotsPerHour: Double
     
-    init() {
+   override init() {
         self.metresPerSec = 0.0
         self.kmPerHour = 0.0
         self.milesPerHour = 0.0
@@ -30,9 +30,9 @@ class Speed {
     
     // creating histroy data
     func getSpeedData() -> String {
-        return "\(NSLocalizedString("SpeedHistoryTitleForMetersPerSecond", comment: ""))\(self.metresPerSec)\n" +
-            "\(NSLocalizedString("SpeedHistoryTitleForKilometersPerHour", comment: ""))\(self.kmPerHour)\n" +
-            "\(NSLocalizedString("SpeedHistoryTitleForMilesPerHour", comment: ""))\(self.milesPerHour)\n" +
-            "\(NSLocalizedString("SpeedHistoryTitleForKnots", comment: ""))\(self.knotsPerHour)"
+        return "\(NSLocalizedString("SpeedHistoryTitleForMetersPerSecond", comment: ""))\(formatTextFieldValue(data: self.metresPerSec))\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForKilometersPerHour", comment: ""))\(formatTextFieldValue(data: self.kmPerHour))\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForMilesPerHour", comment: ""))\(formatTextFieldValue(data: self.milesPerHour))\n" +
+            "\(NSLocalizedString("SpeedHistoryTitleForKnots", comment: ""))\(formatTextFieldValue(data: self.knotsPerHour))"
     }
 }

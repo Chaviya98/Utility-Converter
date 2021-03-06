@@ -254,7 +254,11 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         
         if(textField1.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField2.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField3.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField4.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textField5.text != Constants.DEFAULT_TEXT_FIELD_VALUE){
-            DataManagementStore.saveDataToStore(key: StoreKeys.Volume.PRIMARY_KEY, value: creatingHistoryData())
+            if(optionSegementController.selectedSegmentIndex == 0){
+                DataManagementStore.saveDataToStore(key: StoreKeys.Liquid.PRIMARY_KEY, value: creatingHistoryData())
+            } else{
+                DataManagementStore.saveDataToStore(key: StoreKeys.Cube.PRIMARY_KEY, value: creatingHistoryData())
+            }
             displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
@@ -263,12 +267,22 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func historyBtnPressed(_ sender: UIBarButtonItem) {
-        let storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Volume.PRIMARY_KEY)
+        var storage:[String] = []
+        var storageType:String = ""
+        
+        if(optionSegementController.selectedSegmentIndex == 0){
+             storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Liquid.PRIMARY_KEY)
+             storageType = StoreKeys.Liquid.PRIMARY_KEY
+        } else{
+             storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Cube.PRIMARY_KEY)
+             storageType = StoreKeys.Cube.PRIMARY_KEY
+        }
+     
         if(storage.count > 0){
             // laoding history page with related history data
             let destination = storyboard?.instantiateViewController(withIdentifier: "historyView") as! HistoryViewController
             destination.storage = storage
-            destination.storageType = StoreKeys.Volume.PRIMARY_KEY
+            destination.storageType = storageType
             self.present(destination, animated: true, completion: nil)
         }else{
             displayAlertView(alertTitle: Alerts.NoHistory.TITLE, alertDescription: Alerts.NoHistory.MESSAGE)
@@ -289,17 +303,17 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     // saving available data in the text fields when app closing
     func savingDataInAppClose(){
         if(optionSegementController.selectedSegmentIndex == 0){
-            defaults.set(textField1.text, forKey: StoreKeys.Volume.PRESENT_VALUE_UK_GALLON)
-            defaults.set(textField2.text, forKey: StoreKeys.Volume.PRESENT_VALUE_LITER)
-            defaults.set(textField3.text, forKey: StoreKeys.Volume.PRESENT_VALUE_UK_PINT)
-            defaults.set(textField4.text, forKey: StoreKeys.Volume.PRESENT_VALUE_FLUID_OUNCE)
-            defaults.set(textField5.text, forKey: StoreKeys.Volume.PRESENT_VALUE_MILIILITRE)
+            defaults.set(textField1.text, forKey: StoreKeys.Liquid.PRESENT_VALUE_UK_GALLON)
+            defaults.set(textField2.text, forKey: StoreKeys.Liquid.PRESENT_VALUE_LITER)
+            defaults.set(textField3.text, forKey: StoreKeys.Liquid.PRESENT_VALUE_UK_PINT)
+            defaults.set(textField4.text, forKey: StoreKeys.Liquid.PRESENT_VALUE_FLUID_OUNCE)
+            defaults.set(textField5.text, forKey: StoreKeys.Liquid.PRESENT_VALUE_MILIILITRE)
         }else{
-            defaults.set(textField1.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_CENTIMETERS)
-            defaults.set(textField2.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILIMETERS)
-            defaults.set(textField3.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILES)
-            defaults.set(textField4.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_KILOMETERS)
-            defaults.set(textField5.text, forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_METRES)
+            defaults.set(textField1.text, forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_CENTIMETERS)
+            defaults.set(textField2.text, forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_MILIMETERS)
+            defaults.set(textField3.text, forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_MILES)
+            defaults.set(textField4.text, forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_KILOMETERS)
+            defaults.set(textField5.text, forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_METRES)
         }
         defaults.synchronize()
     }
@@ -307,17 +321,17 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
     //  retrieving saved data for text fields when app opening
     func retrievingDataInAppOpen(){
         if(optionSegementController.selectedSegmentIndex == 0){
-            textField1.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_UK_GALLON)
-            textField2.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_LITER)
-            textField3.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_UK_PINT)
-            textField4.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_FLUID_OUNCE)
-            textField5.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_MILIILITRE)
+            textField1.text = defaults.string(forKey: StoreKeys.Liquid.PRESENT_VALUE_UK_GALLON)
+            textField2.text = defaults.string(forKey: StoreKeys.Liquid.PRESENT_VALUE_LITER)
+            textField3.text = defaults.string(forKey: StoreKeys.Liquid.PRESENT_VALUE_UK_PINT)
+            textField4.text = defaults.string(forKey: StoreKeys.Liquid.PRESENT_VALUE_FLUID_OUNCE)
+            textField5.text = defaults.string(forKey: StoreKeys.Liquid.PRESENT_VALUE_MILIILITRE)
         } else {
-            textField1.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_CENTIMETERS)
-            textField2.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILIMETERS)
-            textField3.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_MILES)
-            textField4.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_KILOMETERS)
-            textField5.text = defaults.string(forKey: StoreKeys.Volume.PRESENT_VALUE_CUBIC_METRES)
+            textField1.text = defaults.string(forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_CENTIMETERS)
+            textField2.text = defaults.string(forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_MILIMETERS)
+            textField3.text = defaults.string(forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_MILES)
+            textField4.text = defaults.string(forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_KILOMETERS)
+            textField5.text = defaults.string(forKey: StoreKeys.Cube.PRESENT_VALUE_CUBIC_METRES)
         }
         
         

@@ -6,14 +6,14 @@
 //
 
 import Foundation
-class Cube {
+class Cube : Unit {
     var cm: Double
     var mm: Double
     var mile: Double
     var km: Double
     var metre: Double
     
-    init() {
+  override init() {
         self.cm = 0.0
         self.mm = 0.0
         self.mile = 0.0
@@ -31,10 +31,10 @@ class Cube {
     }
     // creating histroy data
     func getCubeData() -> String {
-        return "Cube-CubicCentimeters --> \(self.cm)\n" +
-            "Cube-CubicMillimeters --> \(self.mm)\n" +
-            "Cube-CubicMiles --> \(self.mile)\n" +
-            "Cube-CubicKilometers --> \(self.km)\n" +
-            "Cube-CubicMeters --> \(self.metre)"
+        return "Cube-CubicCentimeters --> \(formatTextFieldValue(data: self.cm))\n" +
+            "Cube-CubicMillimeters --> \(formatTextFieldValue(data: self.mm))\n" +
+            "Cube-CubicMiles --> \(formatTextFieldValue(data: self.mile))\n" +
+            "Cube-CubicKilometers --> \(formatTextFieldValue(data: self.km))\n" +
+            "Cube-CubicMeters --> \(formatTextFieldValue(data: self.metre))"
     }
 }

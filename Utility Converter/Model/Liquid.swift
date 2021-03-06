@@ -7,14 +7,14 @@
 
 import Foundation
 
-class Liquid {
+class Liquid : Unit{
     var ukGallon: Double
     var litre: Double
     var ukPint: Double
     var fluidOunce: Double
     var millilitre: Double
     
-    init() {
+    override init() {
         self.ukGallon = 0.0
         self.litre = 0.0
         self.ukPint = 0.0
@@ -32,10 +32,10 @@ class Liquid {
     
     // creating histroy data
     func getLiquidData() -> String {
-        return "Liquid-UK Gallon --> \(self.ukGallon)\n" +
-            "Liquid-Liter --> \(self.litre)\n" +
-            "Liquid-Uk Pint --> \(self.ukPint)\n" +
-            "Liquid-Fluid Ounce --> \(self.fluidOunce)\n" +
-            "Liquid-Mililitre --> \(self.millilitre)"
+        return "Liquid-UK Gallon --> \(formatTextFieldValue(data: self.ukGallon))\n" +
+            "Liquid-Liter --> \(formatTextFieldValue(data: self.litre))\n" +
+            "Liquid-Uk Pint --> \(formatTextFieldValue(data: self.ukPint))\n" +
+            "Liquid-Fluid Ounce --> \(formatTextFieldValue(data: self.fluidOunce))\n" +
+            "Liquid-Mililitre --> \(formatTextFieldValue(data: self.millilitre))"
     }
 }

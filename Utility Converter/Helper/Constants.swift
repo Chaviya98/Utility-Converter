@@ -9,8 +9,8 @@ import Foundation
 
 struct Constants {
 
-    static let DEFAULT_DECIMAL_ROUND_UP_NUMBER = 5
-    static let MAX_DECIMAL_ROUND_UP_NUMBER = 2
+    static let DEFAULT_DECIMAL_ROUND_UP_NUMBER = 2
+    static let MAX_DECIMAL_ROUND_UP_NUMBER = 5
     static let DEFAULT_TEXT_FIELD_VALUE = ""
     static let MAX_HISTORY_COUNT = 5
 }
