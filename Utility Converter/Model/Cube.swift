@@ -31,10 +31,10 @@ class Cube : Unit {
     }
     // creating histroy data
     func getCubeData() -> String {
-        return "Cube-CubicCentimeters --> \(formatTextFieldValue(data: self.cm))\n" +
-            "Cube-CubicMillimeters --> \(formatTextFieldValue(data: self.mm))\n" +
-            "Cube-CubicMiles --> \(formatTextFieldValue(data: self.mile))\n" +
-            "Cube-CubicKilometers --> \(formatTextFieldValue(data: self.km))\n" +
-            "Cube-CubicMeters --> \(formatTextFieldValue(data: self.metre))"
+        return "\(NSLocalizedString("CubeHistoryTitleForCubicCentimeters", comment: ""))\(formatTextFieldValue(data: self.cm))\n" +
+            "\(NSLocalizedString("CubeHistoryTitleForCubicMillimeters", comment: ""))\(formatTextFieldValue(data: self.mm))\n" +
+            "\(NSLocalizedString("CubeHistoryTitleForCubicMiles", comment: ""))\(formatTextFieldValue(data: self.mile))\n" +
+            "\(NSLocalizedString("CubeHistoryTitleForCubicKilometers", comment: ""))\(formatTextFieldValue(data: self.km))\n" +
+            "\(NSLocalizedString("CubeHistoryTitleForCubicMeters", comment: ""))\(formatTextFieldValue(data: self.metre))"
     }
 }

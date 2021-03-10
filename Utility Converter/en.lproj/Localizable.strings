@@ -38,4 +38,17 @@
 "WeightHistoryTitleForPounds" = "Pounds --> ";
 "WeightHistoryTitleForStonePounds" = "StonePounds --> ";
 
+"LiquidHistoryTitleForUKGallon" = "Liquid-UK Gallon --> ";
+"LiquidHistoryTitleForLiter" = "Liquid-Liter --> ";
+"LiquidHistoryTitleForUKPint" = "Liquid-Uk Pint --> ";
+"LiquidHistoryTitleForFluidOunce" = "Liquid-Fluid Ounce --> ";
+"LiquidHistoryTitleForMililitre" = "Liquid-Mililitre --> ";
+
+"CubeHistoryTitleForCubicCentimeters" = "Cube-CubicCentimeters --> ";
+"CubeHistoryTitleForCubicMillimeters" = "Cube-CubicMillimeters --> ";
+"CubeHistoryTitleForCubicMiles" = "Cube-CubicMiles --> ";
+"CubeHistoryTitleForCubicKilometers" = "Cube-CubicKilometers --> ";
+"CubeHistoryTitleForCubicMeters" = "Cube-CubicMeters --> ";
+
+
 

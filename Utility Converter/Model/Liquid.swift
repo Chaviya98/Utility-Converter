@@ -32,10 +32,10 @@ class Liquid : Unit{
     
     // creating histroy data
     func getLiquidData() -> String {
-        return "Liquid-UK Gallon --> \(formatTextFieldValue(data: self.ukGallon))\n" +
-            "Liquid-Liter --> \(formatTextFieldValue(data: self.litre))\n" +
-            "Liquid-Uk Pint --> \(formatTextFieldValue(data: self.ukPint))\n" +
-            "Liquid-Fluid Ounce --> \(formatTextFieldValue(data: self.fluidOunce))\n" +
-            "Liquid-Mililitre --> \(formatTextFieldValue(data: self.millilitre))"
+        return "\(NSLocalizedString("LiquidHistoryTitleForUKGallon", comment: ""))\(formatTextFieldValue(data: self.ukGallon))\n" +
+            "\(NSLocalizedString("LiquidHistoryTitleForLiter", comment: ""))\(formatTextFieldValue(data: self.litre))\n" +
+            "\(NSLocalizedString("LiquidHistoryTitleForUKPint", comment: ""))\(formatTextFieldValue(data: self.ukPint))\n" +
+            "\(NSLocalizedString("LiquidHistoryTitleForFluidOunce", comment: ""))\(formatTextFieldValue(data: self.fluidOunce))\n" +
+            "\(NSLocalizedString("LiquidHistoryTitleForMililitre", comment: ""))\(formatTextFieldValue(data: self.millilitre))"
     }
 }
