@@ -59,6 +59,10 @@ class CustomKeyboard: UIView {
                     activeTextField.text?.insert("-", at: currentText.index(currentText.startIndex, offsetBy: 0))
                     activeTextField.sendActions(for: UIControl.Event.editingChanged)
                     setCursorPosition(from: cursorPosition)
+                } else if (currentText.contains("-")){
+                    activeTextField.text?.removeFirst()
+                    activeTextField.sendActions(for: UIControl.Event.editingChanged)
+                    setCursorPosition(from: cursorPosition)
                 }
             default:
                 activeTextField.insertText(String(sender.tag))

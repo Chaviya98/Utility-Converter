@@ -355,7 +355,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
         textField5.inputView = UIView()
     }
     
-    // formatting value into 2 decimal points
+    // formatting value into decimal points
     func formatTextFieldValue(data : Double) -> String {
         return String(data.roundToDecimal(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
     }
