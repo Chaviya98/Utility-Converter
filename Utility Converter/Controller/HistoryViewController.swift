@@ -66,7 +66,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Speed.PRIMARY_KEY)
             storageType = StoreKeys.Speed.PRIMARY_KEY
         }
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func extractCellImageName() -> String {
@@ -112,7 +112,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func clearBtnPressed(_ sender: UIBarButtonItem) {
         DataManagementStore.clearHistoryData(key: storageType)
         storage = []
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
 }
