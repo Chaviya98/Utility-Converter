@@ -48,25 +48,35 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch HistoryViews(rawValue: sender.selectedSegmentIndex)! {
 
         case .weight:
-            storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Weight.PRIMARY_KEY)
+            storage = extractStoreData(key: StoreKeys.Weight.PRIMARY_KEY)
             storageType = StoreKeys.Weight.PRIMARY_KEY
         case .length:
-            storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Length.PRIMARY_KEY)
+            storage = extractStoreData(key: StoreKeys.Length.PRIMARY_KEY)
             storageType = StoreKeys.Length.PRIMARY_KEY
         case .temperature:
-            storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Temperature.PRIMARY_KEY)
+            storage = extractStoreData(key: StoreKeys.Temperature.PRIMARY_KEY)
             storageType = StoreKeys.Temperature.PRIMARY_KEY
         case .liquid:
-            storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Liquid.PRIMARY_KEY)
+            storage = extractStoreData(key: StoreKeys.Liquid.PRIMARY_KEY)
             storageType = StoreKeys.Liquid.PRIMARY_KEY
         case .cube:
-            storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Cube.PRIMARY_KEY)
+            storage = extractStoreData(key: StoreKeys.Cube.PRIMARY_KEY)
             storageType = StoreKeys.Cube.PRIMARY_KEY
         case .speed:
-            storage = DataManagementStore.getSavedDataFromStore(key: StoreKeys.Speed.PRIMARY_KEY)
+            storage = extractStoreData(key: StoreKeys.Speed.PRIMARY_KEY)
             storageType = StoreKeys.Speed.PRIMARY_KEY
         }
         self.tableView.reloadData()
+    }
+    
+    
+    func extractStoreData(key:String) -> [String]{
+       let tempStorage = DataManagementStore.getSavedDataFromStore(key: key)
+        if (tempStorage.isEmpty){
+            return [Alerts.NoHistory.MESSAGE]
+        } else {
+            return tempStorage
+        }
     }
     
     func extractCellImageName() -> String {
@@ -111,7 +121,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func clearBtnPressed(_ sender: UIBarButtonItem) {
         DataManagementStore.clearHistoryData(key: storageType)
-        storage = []
+        storage = [Alerts.NoHistory.MESSAGE]
         self.tableView.reloadData()
     }
     
