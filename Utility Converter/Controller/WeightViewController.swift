@@ -87,6 +87,8 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
             guard let textFieldValue = sender.text else { return displayAlertView(alertTitle: Alerts.CommonAlert.TITLE, alertDescription: Alerts.CommonAlert.MESSAGE) }
             guard let doubleTextFieldValue = Double(textFieldValue) else { return displayAlertView(alertTitle: Alerts.InvalidParameters.TITLE, alertDescription: Alerts.InvalidParameters.MESSAGE) }
             
+          let multiplier = pow(10, Double(defaults.integer(forKey: StoreKeys.DECIMAL_VALUE_KEY)))
+            
             switch WeightUnits(rawValue: sender.tag)! {
             
             case .kg:
@@ -101,7 +103,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
                 textFieldOunce.text = "\(formatTextFieldValue(data: weight.ounces))"
                 textFieldPound.text = "\(formatTextFieldValue(data: weight.pounds))"
                 textFieldStone.text = "\(Int(weight.stonepounds))"
-                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1)))"
+                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1) * multiplier))"
                 
             case .grams:
                 let weightUnitObjForGram = Measurement(value:doubleTextFieldValue, unit: UnitMass.grams)
@@ -116,7 +118,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
                 textFieldOunce.text = "\(formatTextFieldValue(data: weight.ounces))"
                 textFieldPound.text = "\(formatTextFieldValue(data: weight.pounds))"
                 textFieldStone.text = "\(Int(weight.stonepounds))"
-                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1)))"
+                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1) * multiplier))"
             case .ounces:
                 let weightUnitObjForOunce = Measurement(value:doubleTextFieldValue, unit: UnitMass.ounces)
                 weight.ounces = weightUnitObjForOunce.value
@@ -129,7 +131,7 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
                 textFieldGram.text = "\(formatTextFieldValue(data: weight.grams))"
                 textFieldPound.text = "\(formatTextFieldValue(data: weight.pounds))"
                 textFieldStone.text = "\(Int(weight.stonepounds))"
-                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1)))"
+                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1) * multiplier))"
             case .pounds:
                 let weightUnitObjForPound = Measurement(value:doubleTextFieldValue, unit: UnitMass.pounds)
                 weight.pounds = weightUnitObjForPound.value
@@ -142,7 +144,8 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
                 textFieldGram.text = "\(formatTextFieldValue(data: weight.grams))"
                 textFieldOunce.text = "\(formatTextFieldValue(data: weight.ounces))"
                 textFieldStone.text = "\(Int(weight.stonepounds))"
-                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1)))"
+
+                textFieldStonePounds.text = "\(formatTextFieldValue(data: weight.stonepounds.truncatingRemainder(dividingBy: 1) * multiplier))"
             case .stone:
                 let weightUnitObjForStones = Measurement(value:doubleTextFieldValue, unit: UnitMass.stones)
                 weight.stonepounds = weightUnitObjForStones.value
@@ -159,11 +162,11 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
                 
             case .stonepounds:
                 var weightUnitObjForStones : Measurement<UnitMass>?
+                let divider = pow(10, Double(floor( log10( doubleTextFieldValue ) ) + 1))
                 if(textFieldStone.text == ""){
-                    weightUnitObjForStones = Measurement(value:doubleTextFieldValue, unit: UnitMass.stones)
-                    
+                    weightUnitObjForStones = Measurement(value:doubleTextFieldValue / divider, unit: UnitMass.stones)
                 } else {
-                    let stonePoundFullValue = doubleTextFieldValue + Double(textFieldStone.text!)!
+                    let stonePoundFullValue = doubleTextFieldValue / divider + Double(textFieldStone.text!)!
                     weightUnitObjForStones = Measurement(value:stonePoundFullValue, unit: UnitMass.stones)
                 }
                 
