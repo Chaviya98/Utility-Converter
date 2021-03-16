@@ -125,7 +125,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: StoreKeys.Speed.PRIMARY_KEY, value: speed.getSpeedData())
-            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
+            showToast(message: Alerts.ValidSaveAttempt.TITLE, seconds: 0.8)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }

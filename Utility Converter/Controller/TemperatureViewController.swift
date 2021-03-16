@@ -106,7 +106,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: UIBarButtonItem) {
         if(textFieldFahrenheit.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldCelsius.text != Constants.DEFAULT_TEXT_FIELD_VALUE && textFieldKelvin.text != Constants.DEFAULT_TEXT_FIELD_VALUE){
             DataManagementStore.saveDataToStore(key: StoreKeys.Temperature.PRIMARY_KEY, value: temperature.getTemperatureData())
-            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
+            showToast(message: Alerts.ValidSaveAttempt.TITLE, seconds: 0.8)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }

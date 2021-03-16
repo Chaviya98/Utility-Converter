@@ -13,7 +13,7 @@
 "VolumeHelpTextSectionA" =  "Utility Converter App supports volume convention such as UK gallon, litre, UK pint, fluid ounce, millilitre.";
 "CubeHelpTextSectionA" =  "Utility Converter App supports cubic convention such as metre, km, mile, cm, mm.";
 "WeightHelpTextSectionA" =  "Utility Converter App supports weight conventions such as Kg, grams, ounces, pounds, stone-pounds.";
-"SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use the below input and click save after editing.";
+"SettingDescription" = "Please use the above control panel to change the decimal number values. If you want to give your own number please use custom option.";
 
 "TemperatureHistoryTitleForFahrenheit" = "Fahrenheit --> ";
 "TemperatureHistoryTitleForCelsius" = "Celsius --> ";

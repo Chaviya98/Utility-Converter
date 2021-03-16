@@ -259,7 +259,7 @@ class VolumeViewController : UIViewController, UITextFieldDelegate {
             } else{
                 DataManagementStore.saveDataToStore(key: StoreKeys.Cube.PRIMARY_KEY, value: creatingHistoryData())
             }
-            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
+            showToast(message: Alerts.ValidSaveAttempt.TITLE, seconds: 0.8)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }

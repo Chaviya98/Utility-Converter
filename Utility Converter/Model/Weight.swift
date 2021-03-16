@@ -34,7 +34,7 @@ class Weight :Unit {
     func getWeightData() -> String {
         return "\(NSLocalizedString("WeightHistoryTitleForKG", comment: ""))\(formatTextFieldValue(data: self.kg))\n" +
             "\(NSLocalizedString("WeightHistoryTitleForGrams", comment: ""))\(formatTextFieldValue(data: self.grams))\n" +
-            "\(NSLocalizedString("WeightHistoryTitleForOunces", comment: ""))\(formatTextFieldValue(data: self.ounces))" +
+            "\(NSLocalizedString("WeightHistoryTitleForOunces", comment: ""))\(formatTextFieldValue(data: self.ounces))\n" +
             "\(NSLocalizedString("WeightHistoryTitleForPounds", comment: ""))\(formatTextFieldValue(data: self.pounds))\n" +
             "\(NSLocalizedString("WeightHistoryTitleForStonePounds", comment: ""))\(formatTextFieldValue(data: self.stonepounds))"
     }

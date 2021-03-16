@@ -217,7 +217,7 @@ class LengthViewController: UIViewController, UITextFieldDelegate  {
         
         if(validationCheckForValues()){
             DataManagementStore.saveDataToStore(key: StoreKeys.Length.PRIMARY_KEY, value: length.getLengthData())
-            displayAlertView(alertTitle: Alerts.ValidSaveAttempt.TITLE, alertDescription: Alerts.ValidSaveAttempt.MESSAGE)
+            showToast(message: Alerts.ValidSaveAttempt.TITLE, seconds: 0.8)
         } else {
             displayAlertView(alertTitle: Alerts.InvalidSaveAttempt.TITLE, alertDescription: Alerts.InvalidSaveAttempt.MESSAGE)
         }

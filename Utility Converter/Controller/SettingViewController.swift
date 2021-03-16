@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class SettingViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var roundUpDecimalNumberSegementController: UISegmentedControl!
@@ -57,14 +58,16 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
         if(roundUpDecimalNumberSegementController.selectedSegmentIndex == 0)
         {
             setupDecimalRoundupNumber(index: roundUpDecimalNumberSegementController.selectedSegmentIndex,value: 2)
-            
+            showToast(message: "Precision Value Updated", seconds: 0.8)
         }
         else if(roundUpDecimalNumberSegementController.selectedSegmentIndex == 1)
         {
             setupDecimalRoundupNumber(index: roundUpDecimalNumberSegementController.selectedSegmentIndex,value: 3)
+            showToast(message: "Precision Value Updated", seconds: 0.8)
         }else if (roundUpDecimalNumberSegementController.selectedSegmentIndex == 2)
         {
             setupDecimalRoundupNumber(index: roundUpDecimalNumberSegementController.selectedSegmentIndex,value: 4)
+            showToast(message: "Precision Value Updated", seconds: 0.8)
         } else{
             roundUpDecimalNumberSegementController.selectedSegmentIndex = 4
             roundUpDecimalTextField.isHidden = false
@@ -84,7 +87,7 @@ class SettingViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         if let number = Int(roundUpDecimalTextField.text!) {
-            if (number < Constants.MAX_DECIMAL_ROUND_UP_NUMBER) {
+            if (number <= Constants.MAX_DECIMAL_ROUND_UP_NUMBER) {
                 defaults.set(number, forKey: StoreKeys.DECIMAL_VALUE_KEY)
                 dismiss(animated: true, completion: nil)
             } else {
