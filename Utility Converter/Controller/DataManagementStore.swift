@@ -36,4 +36,11 @@ class DataManagementStore: NSObject {
         }
     }
     
+    
+    static func clearHistoryData(key:String) {
+        if(UserDefaults.standard.object(forKey: key) != nil){
+            UserDefaults.standard.set([], forKey: key)
+        }
+    }
+    
 }

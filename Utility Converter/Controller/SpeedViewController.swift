@@ -79,6 +79,7 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
             
             case .metrespersec:
                 let speedUnitObjForMetresPerSec = Measurement(value:doubleTextFieldValue, unit: UnitSpeed.metersPerSecond)
+                speed.metresPerSec = speedUnitObjForMetresPerSec.value
                 speed.kmPerHour = speedUnitObjForMetresPerSec.converted(to: .kilometersPerHour).value
                 speed.milesPerHour = speedUnitObjForMetresPerSec.converted(to: .milesPerHour).value
                 speed.knotsPerHour = speedUnitObjForMetresPerSec.converted(to: .knots).value
@@ -88,29 +89,32 @@ class SpeedViewController: UIViewController, UITextFieldDelegate {
                 textFieldKnotsPerHour.text = "\(formatTextFieldValue(data: speed.knotsPerHour))"
             case .kmperhour:
                 let speedUnitObjForKilometersPerHour = Measurement(value:doubleTextFieldValue, unit: UnitSpeed.kilometersPerHour)
+                speed.kmPerHour = speedUnitObjForKilometersPerHour.value
                 speed.metresPerSec = speedUnitObjForKilometersPerHour.converted(to: .metersPerSecond).value
                 speed.milesPerHour = speedUnitObjForKilometersPerHour.converted(to: .milesPerHour).value
                 speed.knotsPerHour = speedUnitObjForKilometersPerHour.converted(to: .knots).value
                 
-                textFieldMetresPerSec.text = "\(formatTextFieldValue(data: speed.milesPerHour))"
+                textFieldMetresPerSec.text = "\(formatTextFieldValue(data: speed.metresPerSec))"
                 textFieldMilesPerHour.text = "\(formatTextFieldValue(data: speed.milesPerHour))"
                 textFieldKnotsPerHour.text = "\(formatTextFieldValue(data: speed.knotsPerHour))"
             case .milesperhour:
                 let speedUnitObjForMilesPerHour = Measurement(value:doubleTextFieldValue, unit: UnitSpeed.milesPerHour)
+                speed.milesPerHour = speedUnitObjForMilesPerHour.value
                 speed.metresPerSec = speedUnitObjForMilesPerHour.converted(to: .metersPerSecond).value
                 speed.kmPerHour = speedUnitObjForMilesPerHour.converted(to: .kilometersPerHour).value
                 speed.knotsPerHour = speedUnitObjForMilesPerHour.converted(to: .knots).value
                 
-                textFieldMetresPerSec.text = "\(formatTextFieldValue(data: speed.milesPerHour))"
+                textFieldMetresPerSec.text = "\(formatTextFieldValue(data: speed.metresPerSec))"
                 textFieldKmPerHour.text = "\(formatTextFieldValue(data: speed.kmPerHour))"
                 textFieldKnotsPerHour.text = "\(formatTextFieldValue(data: speed.knotsPerHour))"
             case .knotsperhour:
                 let speedUnitObjForKnots = Measurement(value:doubleTextFieldValue, unit: UnitSpeed.knots)
+                speed.knotsPerHour = speedUnitObjForKnots.value
                 speed.metresPerSec = speedUnitObjForKnots.converted(to: .metersPerSecond).value
                 speed.kmPerHour = speedUnitObjForKnots.converted(to: .kilometersPerHour).value
                 speed.milesPerHour = speedUnitObjForKnots.converted(to: .milesPerHour).value
                 
-                textFieldMetresPerSec.text = "\(formatTextFieldValue(data: speed.milesPerHour))"
+                textFieldMetresPerSec.text = "\(formatTextFieldValue(data: speed.metresPerSec))"
                 textFieldKmPerHour.text = "\(formatTextFieldValue(data: speed.kmPerHour))"
                 textFieldMilesPerHour.text = "\(formatTextFieldValue(data: speed.milesPerHour))"
             }

@@ -104,8 +104,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    @IBAction func BackBtnPressed(_ sender: Any) {
+    @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func clearBtnPressed(_ sender: UIBarButtonItem) {
+        DataManagementStore.clearHistoryData(key: storageType)
+        storage = []
+        tableView.reloadData()
     }
     
 }

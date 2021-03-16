@@ -1909,7 +1909,13 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QLX-5g-xDS">
                                             <color key="tintColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="BackBtnPressed:" destination="DXx-4e-enA" id="w0e-O3-lSI"/>
+                                                <action selector="backBtnPressed:" destination="DXx-4e-enA" id="w0e-O3-lSI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Clear" id="4VT-CW-lrf">
+                                            <color key="tintColor" red="0.64294338230000003" green="0.44338023659999998" blue="0.94906157260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="clearBtnPressed:" destination="DXx-4e-enA" id="Obc-2f-MGZ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
